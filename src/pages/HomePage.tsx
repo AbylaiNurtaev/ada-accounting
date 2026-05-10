@@ -10,7 +10,6 @@ import { Hero } from '../sections/Hero'
 import { Numbers } from '../sections/Numbers'
 import { Reviews } from '../sections/Reviews'
 import { Services } from '../sections/Services'
-import { Team } from '../sections/Team'
 
 export function HomePage() {
   return (
@@ -19,7 +18,6 @@ export function HomePage() {
       <main className="relative z-10">
         <Hero />
         <About />
-        <Team />
         <Services />
         <CasesSection />
         <Benefits />
