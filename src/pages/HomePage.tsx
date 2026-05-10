@@ -2,8 +2,6 @@ import { CasesSection } from '../components/CasesSection'
 import { About } from '../sections/About'
 import { Benefits } from '../sections/Benefits'
 import { Contact } from '../sections/Contact'
-import { Faq } from '../sections/Faq'
-import { FinalReviews } from '../sections/FinalReviews'
 import { Footer } from '../sections/Footer'
 import { Header } from '../sections/Header'
 import { Hero } from '../sections/Hero'
@@ -23,9 +21,7 @@ export function HomePage() {
         <Benefits />
         <Numbers />
         <Reviews />
-        <Faq />
         <Contact />
-        <FinalReviews />
       </main>
       <Footer />
     </div>
