@@ -8,7 +8,7 @@ import { cases } from '../data/cases'
 import { CaseCard } from './CaseCard'
 
 const SLIDE =
-  'min-w-0 shrink-0 grow-0 basis-[min(78vw,320px)] sm:basis-[360px] lg:basis-[400px]'
+  'min-w-0 shrink-0 grow-0 basis-[42vw] sm:basis-[360px] lg:basis-[400px]'
 
 export function CasesSection() {
   const reduceMotion = useReducedMotion()
@@ -128,7 +128,7 @@ export function CasesSection() {
           className="overflow-hidden pl-4 sm:pl-6 lg:pl-[max(1.5rem,calc((100vw-1320px)/2+1.5rem))]"
           ref={emblaRef}
         >
-          <div className="flex items-stretch gap-4 pb-2 sm:gap-6 [-webkit-overflow-scrolling:touch]">
+          <div className="flex items-stretch gap-3 pb-2 sm:gap-6 [-webkit-overflow-scrolling:touch]">
             {cases.map((item, index) => (
               <div className={SLIDE} key={item.id}>
                 <CaseCard item={item} index={index} />
