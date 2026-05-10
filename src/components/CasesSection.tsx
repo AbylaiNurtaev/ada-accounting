@@ -8,7 +8,7 @@ import { cases } from '../data/cases'
 import { CaseCard } from './CaseCard'
 
 const SLIDE =
-  'min-w-0 shrink-0 grow-0 basis-[min(88vw,420px)] sm:basis-[360px] lg:basis-[400px]'
+  'min-w-0 shrink-0 grow-0 basis-[min(78vw,320px)] sm:basis-[360px] lg:basis-[400px]'
 
 export function CasesSection() {
   const reduceMotion = useReducedMotion()
@@ -61,7 +61,7 @@ export function CasesSection() {
 
   return (
     <motion.section
-      className="relative overflow-hidden bg-cyber-bg py-20 sm:py-24 lg:py-28"
+      className="relative overflow-hidden bg-cyber-bg py-14 sm:py-24 lg:py-28"
       initial={{ opacity: 0, y: 48 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.12 }}
@@ -71,7 +71,7 @@ export function CasesSection() {
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
       <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 flex max-w-3xl flex-col gap-4 md:mb-14">
+        <div className="mb-8 flex max-w-3xl flex-col gap-3 sm:mb-12 sm:gap-4 md:mb-14">
           <motion.span
             className="w-fit rounded-full border border-white/10 bg-white/[0.04] px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.25em] text-white/70 backdrop-blur-md"
             initial={{ opacity: 0, y: 16 }}
@@ -82,7 +82,7 @@ export function CasesSection() {
             Портфолио
           </motion.span>
           <motion.h2
-            className="font-display text-3xl font-extrabold uppercase tracking-tight text-white sm:text-4xl lg:text-5xl"
+            className="font-display text-2xl font-extrabold uppercase tracking-tight text-white sm:text-4xl lg:text-5xl"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -94,7 +94,7 @@ export function CasesSection() {
             </span>
           </motion.h2>
           <motion.p
-            className="max-w-xl text-base leading-relaxed text-white/55 sm:text-lg"
+            className="max-w-xl text-sm leading-relaxed text-white/55 sm:text-lg"
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -128,7 +128,7 @@ export function CasesSection() {
           className="overflow-hidden pl-4 sm:pl-6 lg:pl-[max(1.5rem,calc((100vw-1320px)/2+1.5rem))]"
           ref={emblaRef}
         >
-          <div className="flex gap-5 items-stretch pb-2 sm:gap-6 [-webkit-overflow-scrolling:touch]">
+          <div className="flex items-stretch gap-4 pb-2 sm:gap-6 [-webkit-overflow-scrolling:touch]">
             {cases.map((item, index) => (
               <div className={SLIDE} key={item.id}>
                 <CaseCard item={item} index={index} />
@@ -137,7 +137,7 @@ export function CasesSection() {
           </div>
         </div>
 
-        <div className="mx-auto mt-10 max-w-[1400px] px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto mt-6 max-w-[1400px] px-4 sm:mt-10 sm:px-6 lg:px-8">
           <div className="h-1 w-full overflow-hidden rounded-full bg-white/[0.06]">
             <motion.div
               className="h-full rounded-full bg-gradient-to-r from-cyber-accent via-primary-100 to-cyber-accent"
