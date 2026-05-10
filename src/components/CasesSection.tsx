@@ -145,9 +145,6 @@ export function CasesSection() {
               layout
             />
           </div>
-          <p className="mt-3 text-center text-[11px] font-medium uppercase tracking-[0.2em] text-white/35">
-            Свайп · колесо мыши · перетаскивание
-          </p>
         </div>
       </div>
     </motion.section>
