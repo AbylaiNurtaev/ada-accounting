@@ -1,7 +1,9 @@
-import QuizLayout from './components/QuizLayout'
-
-function App() {
-  return <QuizLayout />
+export default function HomePage() {
+  return (
+    <div className="min-h-screen bg-black text-white flex items-center justify-center">
+      <h1 className="text-6xl font-bold">
+        ADA ACCOUNTING
+      </h1>
+    </div>
+  )
 }
-
-export default App
