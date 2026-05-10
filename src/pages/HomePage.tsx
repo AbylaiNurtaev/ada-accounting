@@ -15,9 +15,6 @@ import { Team } from '../sections/Team'
 export function HomePage() {
   return (
     <div className="relative overflow-hidden">
-      <div className="liquid-orb -left-24 top-24 h-72 w-72 bg-indigo-400/35" />
-      <div className="liquid-orb right-10 top-[420px] h-80 w-80 bg-cyan-300/25" />
-      <div className="liquid-orb -bottom-8 left-1/3 h-64 w-64 bg-fuchsia-300/20" />
       <Header />
       <main className="relative z-10">
         <Hero />

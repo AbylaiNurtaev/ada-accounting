@@ -16,26 +16,26 @@ export default {
     extend: {
       colors: {
         primary: {
-          50: '#eef5ff',
-          100: '#d9e9ff',
-          500: '#2274ff',
-          600: '#155de0',
-          700: '#1048b0',
+          50: '#fffbe6',
+          100: '#fff2ad',
+          500: '#ffd400',
+          600: '#d9a900',
+          700: '#9c7600',
         },
-        dark: '#0f172a',
+        dark: '#080808',
         cyber: {
-          bg: '#0d0d0d',
-          accent: '#ff1a1a',
+          bg: '#080808',
+          accent: '#ffd400',
         },
       },
       fontFamily: {
         sans: ['Montserrat', 'Inter', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
-        glass: '0 12px 32px rgba(15, 23, 42, 0.12)',
+        glass: '0 16px 40px rgba(0, 0, 0, 0.32)',
       },
       backgroundImage: {
-        mesh: 'radial-gradient(circle at 10% 20%, rgba(34,116,255,0.18), transparent 40%), radial-gradient(circle at 80% 0%, rgba(56,189,248,0.12), transparent 35%)',
+        mesh: 'radial-gradient(circle at 10% 20%, rgba(255,212,0,0.2), transparent 40%), radial-gradient(circle at 80% 0%, rgba(255,245,158,0.1), transparent 35%)',
       },
       keyframes: {
         'marquee-x': {
@@ -50,4 +50,3 @@ export default {
   },
   plugins: [],
 }
-

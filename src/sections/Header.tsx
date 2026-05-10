@@ -8,10 +8,10 @@ export function Header() {
   const activeSection = useActiveSection()
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/35 backdrop-blur-2xl">
+    <header className="sticky top-0 z-50 border-b border-primary-500/20 bg-black/65 backdrop-blur-2xl">
       <div className="container flex h-20 items-center justify-between">
         <a href="#hero" className="text-xl font-extrabold tracking-tight text-white">
-          ADA <span className="text-cyan-200">ACCOUNTING</span>
+          ADA <span className="text-primary-500">ACCOUNTING</span>
         </a>
 
         <nav className="hidden items-center gap-6 lg:flex">
@@ -22,7 +22,7 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 className={`text-sm font-semibold transition-colors ${
-                  activeSection === section ? 'text-cyan-200' : 'text-slate-200 hover:text-white'
+                  activeSection === section ? 'text-primary-500' : 'text-zinc-200 hover:text-primary-100'
                 }`}
               >
                 {item.label}
@@ -31,7 +31,7 @@ export function Header() {
           })}
           <a
             href="#contact"
-            className="rounded-full border border-white/20 bg-white/15 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/25"
+            className="rounded-full border border-primary-500 bg-primary-500 px-5 py-2.5 text-sm font-semibold text-black transition hover:bg-primary-100"
           >
             Оставить заявку
           </a>
@@ -39,7 +39,7 @@ export function Header() {
 
         <button
           onClick={() => setOpen((prev) => !prev)}
-          className="rounded-lg border border-white/30 bg-white/10 p-2 text-white lg:hidden"
+          className="rounded-lg border border-primary-500/45 bg-black/40 p-2 text-primary-100 lg:hidden"
           aria-label="Toggle menu"
         >
           {open ? <X size={20} /> : <Menu size={20} />}
@@ -47,14 +47,14 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="border-t border-white/15 bg-slate-900/90 lg:hidden">
+        <div className="border-t border-primary-500/20 bg-black/95 lg:hidden">
           <nav className="container flex flex-col gap-4 py-4">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="text-sm font-semibold text-slate-100"
+                className="text-sm font-semibold text-zinc-100"
               >
                 {item.label}
               </a>

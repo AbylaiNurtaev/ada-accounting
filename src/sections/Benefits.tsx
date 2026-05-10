@@ -14,9 +14,9 @@ export function Benefits() {
         <div className="mt-10 grid gap-5 lg:grid-cols-3">
           {benefits.map((item) => (
             <article key={item.title} className="glass rounded-3xl p-7 transition hover:-translate-y-1">
-              <item.icon className="h-7 w-7 text-cyan-200" />
+              <item.icon className="h-7 w-7 text-primary-500" />
               <h3 className="mt-5 text-xl font-bold text-white">{item.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-slate-200/90">{item.text}</p>
+              <p className="mt-3 text-sm leading-relaxed text-zinc-200/90">{item.text}</p>
             </article>
           ))}
         </div>

@@ -8,7 +8,7 @@ export function Numbers() {
         {numbers.map((item) => (
           <article key={item.label} className="glass rounded-2xl p-6">
             <p className="text-4xl font-extrabold text-white">{item.value}</p>
-            <p className="mt-3 text-sm text-slate-100/90">{item.label}</p>
+            <p className="mt-3 text-sm text-zinc-100/90">{item.label}</p>
           </article>
         ))}
       </div>

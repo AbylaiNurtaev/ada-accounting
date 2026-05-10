@@ -8,13 +8,15 @@ html {
 }
 
 body {
-  @apply m-0 bg-slate-950 text-slate-100 antialiased;
+  @apply m-0 bg-black text-zinc-100 antialiased;
   font-family: 'Montserrat', 'Inter', system-ui, sans-serif;
   background-image:
-    radial-gradient(circle at 8% 12%, rgba(129, 140, 248, 0.34), transparent 28%),
-    radial-gradient(circle at 90% 20%, rgba(56, 189, 248, 0.24), transparent 24%),
-    radial-gradient(circle at 30% 90%, rgba(244, 114, 182, 0.18), transparent 26%),
-    linear-gradient(180deg, #020617 0%, #0b1025 100%);
+    linear-gradient(90deg, rgba(255, 212, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 212, 0, 0.035) 1px, transparent 1px),
+    radial-gradient(circle at 12% 10%, rgba(255, 212, 0, 0.16), transparent 28%),
+    radial-gradient(circle at 82% 18%, rgba(255, 230, 80, 0.09), transparent 26%),
+    linear-gradient(180deg, #050505 0%, #101010 48%, #050505 100%);
+  background-size: 56px 56px, 56px 56px, auto, auto, auto;
   background-attachment: fixed;
 }
 
@@ -24,11 +26,11 @@ body {
 
 @layer components {
   .glass {
-    @apply border border-white/20 bg-white/10 shadow-2xl backdrop-blur-2xl;
+    @apply border border-primary-500/25 bg-black/55 shadow-2xl backdrop-blur-2xl;
   }
 
   .glass-soft {
-    @apply border border-white/15 bg-white/5 shadow-xl backdrop-blur-xl;
+    @apply border border-primary-500/20 bg-zinc-950/55 shadow-xl backdrop-blur-xl;
   }
 
   .liquid-orb {

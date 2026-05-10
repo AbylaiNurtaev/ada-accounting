@@ -67,7 +67,7 @@ export function CasesSection() {
       viewport={{ once: true, amount: 0.12 }}
       transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(255,26,26,0.12),transparent)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(255,212,0,0.14),transparent)]" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
       <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
@@ -90,7 +90,7 @@ export function CasesSection() {
           >
             Кейсы{' '}
             <span className="bg-gradient-to-r from-white to-white/60 bg-clip-text text-transparent">
-              Creator Studio
+              Jadi Group
             </span>
           </motion.h2>
           <motion.p
@@ -140,7 +140,7 @@ export function CasesSection() {
         <div className="mx-auto mt-10 max-w-[1400px] px-4 sm:px-6 lg:px-8">
           <div className="h-1 w-full overflow-hidden rounded-full bg-white/[0.06]">
             <motion.div
-              className="h-full rounded-full bg-gradient-to-r from-cyber-accent via-red-500 to-cyber-accent"
+              className="h-full rounded-full bg-gradient-to-r from-cyber-accent via-primary-100 to-cyber-accent"
               style={{ width: `${Math.max(4, progress * 100)}%` }}
               layout
             />

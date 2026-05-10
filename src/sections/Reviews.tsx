@@ -10,9 +10,9 @@ export function Reviews() {
         <div className="mt-10 grid gap-5 lg:grid-cols-3">
           {testimonials.map((review) => (
             <article key={review.name} className="glass-soft rounded-2xl p-6">
-              <p className="text-sm leading-relaxed text-slate-100/90">{review.text}</p>
+              <p className="text-sm leading-relaxed text-zinc-100/90">{review.text}</p>
               <p className="mt-5 font-bold text-white">{review.name}</p>
-              <p className="text-xs text-slate-300">{review.role}</p>
+              <p className="text-xs text-zinc-300">{review.role}</p>
             </article>
           ))}
         </div>

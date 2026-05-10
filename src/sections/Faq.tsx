@@ -22,10 +22,10 @@ export function Faq() {
                 >
                   <span className="font-semibold text-white">{item.question}</span>
                   <ChevronDown
-                    className={`h-5 w-5 text-slate-300 transition-transform ${open ? 'rotate-180' : ''}`}
+                    className={`h-5 w-5 text-zinc-300 transition-transform ${open ? 'rotate-180' : ''}`}
                   />
                 </button>
-                {open && <p className="mt-3 text-sm leading-relaxed text-slate-100/85">{item.answer}</p>}
+                {open && <p className="mt-3 text-sm leading-relaxed text-zinc-100/85">{item.answer}</p>}
               </article>
             )
           })}
