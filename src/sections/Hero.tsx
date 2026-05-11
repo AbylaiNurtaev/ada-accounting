@@ -41,10 +41,10 @@ export function Hero() {
         >
           <p className="text-sm font-semibold uppercase tracking-[0.14em] text-primary-100">Ваши выгоды</p>
           <ul className="mt-5 space-y-4 text-sm text-zinc-100">
-            <li>65 лет совокупной экспертизы команды</li>
-            <li>220+ клиентов в сопровождении</li>
-            <li>Бесплатный аудит базы 1С при подключении</li>
-            <li>Онлайн-обслуживание бизнеса в любой точке мира</li>
+            <li>5+ лет опыта в digital-маркетинге</li>
+            <li>120+ успешных проектов и клиентов</li>
+            <li>Прозрачная аналитика и отчётность</li>
+            <li>Комплексное продвижение бизнеса онлайн</li>
           </ul>
         </motion.div>
       </div>
