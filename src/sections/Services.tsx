@@ -23,18 +23,16 @@ export function Services() {
         </div>
 
         <div className="glass mt-12 overflow-hidden rounded-2xl">
-          <div className="grid grid-cols-4 bg-primary-500 px-4 py-3 text-xs font-semibold uppercase tracking-wide text-black">
+          <div className="grid grid-cols-3 bg-primary-500 px-4 py-3 text-xs font-semibold uppercase tracking-wide text-black">
             <span>Тариф</span>
             <span>Операций</span>
             <span>Сотрудников</span>
-            <span>Стоимость</span>
           </div>
           {tariffs.map((tariff) => (
-            <div key={tariff.name} className="grid grid-cols-4 border-t border-white/10 px-4 py-4 text-sm text-zinc-100">
+            <div key={tariff.name} className="grid grid-cols-3 border-t border-white/10 px-4 py-4 text-sm text-zinc-100">
               <span className="font-semibold text-white">{tariff.name}</span>
               <span>{tariff.ops}</span>
               <span>{tariff.staff}</span>
-              <span className="font-semibold text-primary-100">{tariff.price}</span>
             </div>
           ))}
         </div>
