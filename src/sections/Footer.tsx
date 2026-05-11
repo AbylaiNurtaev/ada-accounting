@@ -7,10 +7,8 @@ export function Footer() {
         <div>
           <h3 className="mb-5 text-sm font-bold uppercase tracking-wide text-white">Меню</h3>
           <ul className="space-y-2 text-sm text-zinc-200">
-            <li><a href="#about" className="hover:text-primary-100">О нас</a></li>
             <li><a href="#services" className="hover:text-primary-100">Калькулятор цен</a></li>
             <li><a href="#services" className="hover:text-primary-100">Тарифы</a></li>
-            <li><a href="#reviews" className="hover:text-primary-100">Наша команда</a></li>
             <li><a href="#services" className="hover:text-primary-100">Услуги</a></li>
             <li><a href="#contact" className="hover:text-primary-100">Контакты</a></li>
           </ul>
@@ -41,13 +39,13 @@ export function Footer() {
 
       <div className="border-t border-white/10 py-6">
         <div className="container text-center text-sm font-semibold text-zinc-200">
-          @ ADA ACCOUNTING, все права защищены.
+          @ JADI group, все права защищены.
         </div>
       </div>
 
       <div className="bg-primary-500 py-10">
         <div className="container text-center">
-          <p className="text-7xl font-bold tracking-[0.18em] text-black sm:text-8xl">ADA</p>
+          <img src="/jadi-logo-dark.svg" alt="JADI group" className="mx-auto h-28 w-auto" />
         </div>
       </div>
     </footer>

@@ -1,12 +1,10 @@
 import { CasesSection } from '../components/CasesSection'
-import { About } from '../sections/About'
 import { Benefits } from '../sections/Benefits'
 import { Contact } from '../sections/Contact'
 import { Footer } from '../sections/Footer'
 import { Header } from '../sections/Header'
 import { Hero } from '../sections/Hero'
 import { Numbers } from '../sections/Numbers'
-import { Reviews } from '../sections/Reviews'
 import { Services } from '../sections/Services'
 
 export function HomePage() {
@@ -15,12 +13,10 @@ export function HomePage() {
       <Header />
       <main className="relative z-10">
         <Hero />
-        <About />
         <Services />
         <CasesSection />
         <Benefits />
         <Numbers />
-        <Reviews />
         <Contact />
       </main>
       <Footer />

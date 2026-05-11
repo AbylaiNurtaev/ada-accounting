@@ -10,8 +10,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-primary-500/20 bg-black/65 backdrop-blur-2xl">
       <div className="container flex h-20 items-center justify-between">
-        <a href="#hero" className="text-xl font-extrabold tracking-tight text-white">
-          ADA <span className="text-primary-500">ACCOUNTING</span>
+        <a href="#hero" className="inline-flex items-center" aria-label="JADI group">
+          <img src="/jadi-logo.svg" alt="JADI group" className="h-14 w-auto" />
         </a>
 
         <nav className="hidden items-center gap-6 lg:flex">

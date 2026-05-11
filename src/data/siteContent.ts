@@ -12,10 +12,8 @@ import {
 } from 'lucide-react'
 
 export const navItems = [
-  { label: 'О нас', href: '#about' },
   { label: 'Услуги', href: '#services' },
   { label: 'Преимущества', href: '#benefits' },
-  { label: 'Отзывы', href: '#reviews' },
   { label: 'FAQ', href: '#faq' },
   { label: 'Контакты', href: '#contact' },
 ]

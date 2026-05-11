@@ -7,11 +7,11 @@ export function Hero() {
       <div className="container grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
         <div>
           <p className="glass-soft mb-5 inline-flex rounded-full px-4 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-primary-100">
-            Комплексное ведение бухгалтерского учета
+            КОМПЛЕКСНОЕ МАРКЕТИНГОВОЕ СОПРОВОЖДЕНИЕ
           </p>
           <h1 className="text-4xl font-extrabold leading-tight text-white md:text-6xl">
-            Финансы под контролем.
-            <span className="block text-primary-500">Бизнес растет уверенно.</span>
+            МАРКЕТИНГ ПОСТРОЕННЫЙ
+            <span className="block text-primary-500">НА АНАЛИТИКЕ</span>
           </h1>
           <p className="mt-6 max-w-xl text-base text-zinc-200/90 md:text-lg">
             Современный бухгалтерский аутсорсинг для ИП и ТОО: налоговый и кадровый учет, отчетность,
