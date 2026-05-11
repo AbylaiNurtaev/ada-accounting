@@ -68,8 +68,7 @@ export const cases: CaseStudy[] = [
     id: 'geely-orbis',
     title: 'Geely Astana (Orbis Auto)',
     description: 'Дилерский центр Geely в Астане — кампании, соцсети и медиа.',
-    image:
-      'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80',
+    image: '/cases/geely-monjaro.jpg',
     category: 'Automotive',
   },
   {
