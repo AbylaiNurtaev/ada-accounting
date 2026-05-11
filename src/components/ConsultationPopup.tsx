@@ -24,7 +24,7 @@ export function ConsultationPopup() {
 
     const timer = window.setTimeout(() => {
       setOpen(true)
-    }, 1400)
+    }, 700)
 
     return () => window.clearTimeout(timer)
   }, [])
@@ -145,10 +145,10 @@ export function ConsultationPopup() {
                     JADI group
                   </p>
                   <h2 id="consultation-popup-title" className="mt-4 text-3xl font-extrabold leading-tight text-white">
-                    Получите бесплатную консультацию маркетолога
+                    Расскажите о вашем бизнесе
                   </h2>
                   <p className="mt-4 text-sm leading-relaxed text-zinc-200/85">
-                    Подберем эффективную стратегию продвижения под ваш бизнес и покажем точки роста.
+                    Оставьте контакты, и маркетолог JADI group покажет, как усилить рекламу, заявки и продажи.
                   </p>
 
                   <div className="mt-7 space-y-3">
@@ -167,10 +167,22 @@ export function ConsultationPopup() {
                   <div className="grid gap-4">
                     <label className="block">
                       <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.16em] text-primary-100">
-                        Имя
+                        Чем вы занимаетесь / Ваш бизнес
                       </span>
                       <input
                         ref={nameInputRef}
+                        required
+                        name="business"
+                        className="w-full rounded-2xl border border-primary-500/20 bg-black/70 px-4 py-3 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+                        placeholder="Например: салон, клиника, интернет-магазин"
+                      />
+                    </label>
+
+                    <label className="block">
+                      <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.16em] text-primary-100">
+                        Имя
+                      </span>
+                      <input
                         required
                         name="name"
                         className="w-full rounded-2xl border border-primary-500/20 bg-black/70 px-4 py-3 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
@@ -188,17 +200,6 @@ export function ConsultationPopup() {
                         type="tel"
                         className="w-full rounded-2xl border border-primary-500/20 bg-black/70 px-4 py-3 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
                         placeholder="+7 777 000 00 00"
-                      />
-                    </label>
-
-                    <label className="block">
-                      <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.16em] text-primary-100">
-                        Название бизнеса
-                      </span>
-                      <input
-                        name="business"
-                        className="w-full rounded-2xl border border-primary-500/20 bg-black/70 px-4 py-3 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
-                        placeholder="Опционально"
                       />
                     </label>
                   </div>
