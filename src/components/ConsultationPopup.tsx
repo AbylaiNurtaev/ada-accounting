@@ -3,7 +3,7 @@ import { CheckCircle2, X } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import type { FormEvent, KeyboardEvent } from 'react'
 
-const POPUP_SESSION_KEY = 'jadi-consultation-popup-closed'
+const POPUP_SESSION_KEY = 'jadi-consultation-popup-closed-v2'
 
 const benefits = [
   'Анализ вашей ниши',
