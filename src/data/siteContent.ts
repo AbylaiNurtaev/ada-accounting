@@ -2,11 +2,7 @@ import {
   BarChart3,
   BriefcaseBusiness,
   Building2,
-  Calculator,
   ChartNoAxesCombined,
-  FileCheck2,
-  Landmark,
-  ShieldCheck,
   UserRoundCheck,
 } from 'lucide-react'
 
@@ -22,15 +18,6 @@ export const aboutStats = [
   { value: '220+', label: 'клиентов доверяют сопровождение нам' },
   { value: '20+', label: 'специалистов в команде' },
   { value: 'Алматы', label: 'собственный филиал для офлайн-встреч' },
-]
-
-export const services = [
-  { title: 'Экспресс-аудит', price: 'от 250 000 тг', icon: FileCheck2 },
-  { title: 'Сдача отчетов в госорганы и Нацбанк', price: 'от 5 000 тг', icon: Landmark },
-  { title: 'Постановка/снятие с НДС', price: 'от 5 000 тг', icon: Calculator },
-  { title: 'Ответы на уведомления налоговой', price: 'от 15 000 тг', icon: ShieldCheck },
-  { title: 'Восстановление учета', price: 'от 150 000 тг', icon: ChartNoAxesCombined },
-  { title: 'Консультации по бухучету, налогам и МСФО', price: 'от 15 000 тг', icon: UserRoundCheck },
 ]
 
 export const benefits = [

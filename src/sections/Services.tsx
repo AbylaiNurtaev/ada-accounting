@@ -1,123 +1,159 @@
 import { AnimatedSection } from '../components/AnimatedSection'
 import { SectionHeading } from '../components/SectionHeading'
-import { services } from '../data/siteContent'
 
-const marketingTariffs = [
+const tariffOneItems = [
+  'Создание рекламной стратегии',
+  'Анализ конкурентов',
+  'Определение целевой аудитории',
+  'Настройка Meta Ads',
+  'Создание рекламных креативов',
+  'Копирайтинг объявлений',
+  'Настройка пикселя',
+  'Аналитика и оптимизация',
+  'Еженедельная отчетность',
+]
+
+const tariffTwoTargetItems = [
+  'Все из Тарифа 1',
+  'Дополнительная оптимизация',
+  'Масштабирование рекламы',
+]
+
+const tariffTwoSmmItems = [
+  'Упаковка Instagram',
+  'Контент-план',
+  'Stories',
+  'Reels',
+  'Дизайн постов',
+  'Копирайтинг',
+  'Аналитика соцсетей',
+  'Ведение аккаунта',
+]
+
+const tariffThreeColumns = [
   {
-    name: 'BASE',
-    text: 'Таргетированная реклама. Поток заявок.',
+    title: 'SMM',
+    items: ['Контент', 'Reels', 'Stories', 'Дизайн', 'Ведение соцсетей'],
   },
   {
-    name: 'PRO',
-    text: 'SMM + таргет. Системный рост.',
+    title: 'Таргет',
+    items: ['Реклама Meta/TikTok', 'Аналитика', 'Креативы', 'Масштабирование', 'Оптимизация'],
   },
   {
-    name: 'ELITE',
-    text: 'Маркетинг под ключ.',
-  },
-  {
-    name: 'CUSTOM',
-    text: 'Соберите собственный тариф под задачи бизнеса.',
+    title: 'Маркетинг',
+    items: ['Маркетинговая стратегия', 'Анализ конкурентов', 'Медиаплан', 'Контроль KPI', 'Growth marketing'],
   },
 ]
 
-const workSteps = [
-  {
-    title: 'Анализ бизнеса',
-    text: 'Изучаем нишу, конкурентов и текущий маркетинг.',
-  },
-  {
-    title: 'Стратегия',
-    text: 'Создаем медиаплан и систему продвижения.',
-  },
-  {
-    title: 'Запуск рекламы',
-    text: 'Подключаем трафик и маркетинговые инструменты.',
-  },
-  {
-    title: 'Оптимизация',
-    text: 'Анализируем показатели и масштабируем результат.',
-  },
-  {
-    title: 'Рост бизнеса',
-    text: 'Выстраиваем стабильную систему привлечения клиентов.',
-  },
-]
+function TariffList({ items }: { items: string[] }) {
+  return (
+    <ul className="mt-4 space-y-2 text-sm leading-relaxed text-zinc-200/88">
+      {items.map((item) => (
+        <li key={item} className="flex gap-2">
+          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary-500" />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  )
+}
 
 export function Services() {
   return (
     <AnimatedSection id="services" className="py-20">
       <div className="container">
         <SectionHeading
-          eyebrow="Услуги и тарифы"
-          title="Полный спектр бухгалтерских услуг"
-          description="Ключевые услуги и тарифные пакеты адаптированы под масштаб компании, количество операций и нагрузку на команду."
+          eyebrow="ТАРИФЫ"
+          title="Маркетинговые решения для роста бизнеса"
+          description="Системный маркетинг под ключ: трафик, контент, стратегия и аналитика."
+          centered
         />
 
-        <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
-            <article key={service.title} className="glass-soft rounded-2xl p-6 transition hover:-translate-y-1">
-              <service.icon className="h-6 w-6 text-primary-500" />
-              <h3 className="mt-4 text-lg font-bold text-white">{service.title}</h3>
-              <p className="mt-2 text-sm text-zinc-200/85">{service.price}</p>
-            </article>
-          ))}
-        </div>
-
-        <div className="mt-14">
-          <div className="mb-7 flex items-center justify-between gap-4">
-            <h3 className="text-2xl font-extrabold uppercase tracking-[0.18em] text-white">ТАРИФЫ</h3>
-            <div className="hidden h-px flex-1 bg-gradient-to-r from-primary-500/55 to-transparent sm:block" />
-          </div>
-
-          <div className="grid gap-5 lg:grid-cols-3">
-            {marketingTariffs.slice(0, 3).map((tariff, index) => (
-              <article
-                key={tariff.name}
-                className="group glass relative overflow-hidden rounded-3xl p-7 transition duration-300 hover:-translate-y-1 hover:border-primary-500/70 hover:shadow-[0_22px_70px_rgba(255,212,0,0.16)]"
-              >
-                <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-primary-500/70 to-transparent opacity-70" />
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary-100">
-                  Тариф {index + 1}
-                </p>
-                <h4 className="mt-5 text-3xl font-extrabold tracking-wide text-white">{tariff.name}</h4>
-                <p className="mt-4 max-w-xs text-base leading-relaxed text-zinc-200/90">{tariff.text}</p>
-              </article>
-            ))}
-          </div>
-
-          <article className="group glass relative mx-auto mt-5 max-w-2xl overflow-hidden rounded-3xl p-7 text-center transition duration-300 hover:-translate-y-1 hover:border-primary-500/70 hover:shadow-[0_22px_70px_rgba(255,212,0,0.16)]">
-            <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-primary-500/80 to-transparent opacity-80" />
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary-100">Тариф 4</p>
-            <h4 className="mt-5 text-3xl font-extrabold tracking-wide text-white">CUSTOM</h4>
-            <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-zinc-200/90">
-              Соберите собственный тариф под задачи бизнеса.
+        <div className="mt-12 grid gap-6 lg:grid-cols-2">
+          <article className="glass group relative overflow-hidden rounded-[2rem] p-6 transition duration-300 hover:-translate-y-1 hover:border-primary-500/70 hover:shadow-[0_28px_90px_rgba(255,212,0,0.18)] sm:p-8">
+            <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-primary-500/80 to-transparent" />
+            <div className="inline-flex rounded-full bg-primary-500 px-8 py-2 text-xl font-extrabold uppercase tracking-wide text-black">
+              ТАРИФ 1
+            </div>
+            <p className="mt-5 max-w-lg text-sm font-semibold italic leading-relaxed text-primary-100">
+              Таргет для стабильного потока заявок. Быстрый запуск и контроль бюджета.
             </p>
+
+            <div className="mt-8">
+              <h3 className="text-xl font-extrabold uppercase tracking-wide text-white">ТАРГЕТ</h3>
+              <TariffList items={tariffOneItems} />
+            </div>
+
+            <div className="mt-8 inline-flex rounded-2xl bg-gradient-to-r from-primary-500 to-primary-50 px-8 py-3 text-xl font-extrabold text-black shadow-[0_18px_50px_rgba(255,212,0,0.16)]">
+              от 200.000 ₸
+            </div>
+          </article>
+
+          <article className="glass group relative overflow-hidden rounded-[2rem] p-6 transition duration-300 hover:-translate-y-1 hover:border-primary-500/70 hover:shadow-[0_28px_90px_rgba(255,212,0,0.18)] sm:p-8">
+            <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-primary-500/80 to-transparent" />
+            <div className="inline-flex rounded-full bg-primary-500 px-8 py-2 text-xl font-extrabold uppercase tracking-wide text-black">
+              ТАРИФ 2
+            </div>
+            <p className="mt-5 max-w-lg text-sm font-semibold italic leading-relaxed text-primary-100">
+              SMM + таргет + контроль маркетолога. Укрепление бренда и системный поток клиентов.
+            </p>
+
+            <div className="mt-8 grid gap-7 md:grid-cols-2">
+              <div>
+                <h3 className="text-xl font-extrabold uppercase tracking-wide text-white">ТАРГЕТ</h3>
+                <TariffList items={tariffTwoTargetItems} />
+              </div>
+              <div>
+                <h3 className="text-xl font-extrabold uppercase tracking-wide text-white">SMM</h3>
+                <TariffList items={tariffTwoSmmItems} />
+              </div>
+            </div>
+
+            <div className="mt-8 inline-flex rounded-2xl bg-gradient-to-r from-primary-500 to-primary-50 px-8 py-3 text-xl font-extrabold text-black shadow-[0_18px_50px_rgba(255,212,0,0.16)]">
+              от 400.000 ₸
+            </div>
           </article>
         </div>
 
-        <div className="mt-16">
-          <div className="mb-8 flex items-center justify-between gap-4">
-            <h3 className="text-2xl font-extrabold uppercase tracking-[0.18em] text-white">ЭТАПЫ РАБОТЫ</h3>
-            <div className="hidden h-px flex-1 bg-gradient-to-r from-primary-500/55 to-transparent sm:block" />
+        <article className="glass group relative mt-7 overflow-hidden rounded-[2rem] p-6 transition duration-300 hover:-translate-y-1 hover:border-primary-500/70 hover:shadow-[0_28px_90px_rgba(255,212,0,0.18)] sm:p-8">
+          <div className="absolute inset-x-12 top-0 h-px bg-gradient-to-r from-transparent via-primary-500/80 to-transparent" />
+          <div className="text-center">
+            <div className="inline-flex rounded-full bg-primary-500 px-9 py-2 text-xl font-extrabold uppercase tracking-wide text-black">
+              ТАРИФ 3
+            </div>
+            <p className="mx-auto mt-5 max-w-xl text-sm font-semibold italic leading-relaxed text-primary-100">
+              Полная маркетинговая система для масштабирования.
+            </p>
           </div>
 
-          <div className="relative grid gap-4 lg:grid-cols-5">
-            <div className="absolute left-0 right-0 top-8 hidden h-px bg-gradient-to-r from-transparent via-primary-500/35 to-transparent lg:block" />
-            {workSteps.map((step, index) => (
-              <article
-                key={step.title}
-                className="glass-soft relative rounded-2xl p-5 transition duration-300 hover:-translate-y-1 hover:border-primary-500/55 hover:shadow-[0_18px_55px_rgba(255,212,0,0.12)]"
-              >
-                <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-full border border-primary-500/55 bg-black text-sm font-extrabold text-primary-500">
-                  {String(index + 1).padStart(2, '0')}
-                </div>
-                <h4 className="text-lg font-bold text-white">{step.title}</h4>
-                <p className="mt-3 text-sm leading-relaxed text-zinc-200/85">{step.text}</p>
-              </article>
+          <div className="mt-9 grid gap-7 lg:grid-cols-3">
+            {tariffThreeColumns.map((column) => (
+              <div key={column.title} className="rounded-3xl border border-primary-500/15 bg-black/35 p-5">
+                <h3 className="text-xl font-extrabold text-white">{column.title}</h3>
+                <TariffList items={column.items} />
+              </div>
             ))}
           </div>
-        </div>
+
+          <div className="mt-8 flex justify-end">
+            <div className="rounded-2xl bg-gradient-to-r from-primary-500 to-primary-50 px-9 py-4 text-2xl font-extrabold text-black shadow-[0_18px_50px_rgba(255,212,0,0.18)]">
+              600.000 ₸
+            </div>
+          </div>
+        </article>
+
+        <article className="glass group mt-7 grid gap-5 overflow-hidden rounded-[2rem] p-6 transition duration-300 hover:-translate-y-1 hover:border-primary-500/70 hover:shadow-[0_28px_90px_rgba(255,212,0,0.16)] md:grid-cols-[0.8fr_1.3fr_0.9fr] md:items-center sm:p-8">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary-100">ТАРИФ 4</p>
+            <h3 className="mt-3 text-2xl font-extrabold text-white">Индивидуальный тариф</h3>
+          </div>
+          <p className="text-base font-semibold leading-relaxed text-zinc-100">
+            Соберите тариф под себя. Платите только за то, что действительно нужно бизнесу.
+          </p>
+          <div className="rounded-2xl bg-gradient-to-r from-primary-500 to-primary-50 px-6 py-4 text-center text-lg font-extrabold text-black">
+            Цена определяется индивидуально
+          </div>
+        </article>
       </div>
     </AnimatedSection>
   )
