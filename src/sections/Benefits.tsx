@@ -8,7 +8,7 @@ export function Benefits() {
       <div className="container">
         <SectionHeading
           eyebrow="Преимущества"
-          title="Надежный бухгалтерский партнер для роста"
+          title="Надежный маркетинговый партнер для роста бизнеса"
           centered
         />
         <div className="mt-10 grid gap-5 lg:grid-cols-3">
