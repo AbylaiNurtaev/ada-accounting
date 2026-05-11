@@ -58,16 +58,6 @@ export const numbers = [
   { value: 'Прозрачно', label: 'медиаплан и контроль рекламного бюджета без скрытых расходов' },
 ]
 
-export const tariffs = [
-  { name: 'LIGHT', ops: '50', staff: '1', price: '125 000 тг' },
-  { name: 'STANDART', ops: '100', staff: '3', price: '230 000 тг' },
-  { name: 'PERSONAL', ops: '150', staff: '5', price: '330 000 тг' },
-  { name: 'EXPERT', ops: '200', staff: '10', price: '510 000 тг' },
-  { name: 'BUSINESS', ops: '300', staff: '20', price: '810 000 тг' },
-  { name: 'BUSINESS PRO', ops: '500', staff: '30', price: '1 220 000 тг' },
-  { name: 'PREMIUM', ops: '1000', staff: '50', price: '2 200 000 тг' },
-]
-
 export const testimonials = [
   {
     name: 'Марал Абдухаимова',
