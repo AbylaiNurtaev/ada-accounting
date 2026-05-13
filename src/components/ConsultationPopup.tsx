@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { CheckCircle2, X } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import type { FormEvent, KeyboardEvent } from 'react'
+import { submitLead } from '../lib/submitLead'
 
 const POPUP_SESSION_KEY = 'jadi-consultation-popup-closed-v2'
 
@@ -15,6 +16,8 @@ const benefits = [
 export function ConsultationPopup() {
   const [open, setOpen] = useState(false)
   const [sent, setSent] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState('')
   const modalRef = useRef<HTMLDivElement>(null)
   const nameInputRef = useRef<HTMLInputElement>(null)
   const closeButtonRef = useRef<HTMLButtonElement>(null)
@@ -58,10 +61,29 @@ export function ConsultationPopup() {
     setOpen(false)
   }
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    sessionStorage.setItem(POPUP_SESSION_KEY, 'true')
-    setSent(true)
+    const form = event.currentTarget
+    const formData = new FormData(form)
+
+    setSubmitting(true)
+    setSubmitError('')
+
+    try {
+      await submitLead({
+        business: String(formData.get('business') ?? ''),
+        name: String(formData.get('name') ?? ''),
+        phone: String(formData.get('phone') ?? ''),
+      })
+
+      form.reset()
+      sessionStorage.setItem(POPUP_SESSION_KEY, 'true')
+      setSent(true)
+    } catch {
+      setSubmitError('Не удалось отправить заявку. Попробуйте еще раз или напишите нам напрямую.')
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   const trapFocus = (event: KeyboardEvent<HTMLDivElement>) => {
@@ -206,10 +228,14 @@ export function ConsultationPopup() {
 
                   <button
                     type="submit"
+                    disabled={submitting}
                     className="mt-6 w-full rounded-full border border-primary-500 bg-primary-500 px-7 py-3.5 text-sm font-extrabold text-black shadow-[0_16px_45px_rgba(255,212,0,0.18)] transition hover:-translate-y-0.5 hover:bg-primary-100"
                   >
-                    Получить консультацию
+                    {submitting ? 'Отправляем...' : 'Получить консультацию'}
                   </button>
+                  {submitError && (
+                    <p className="mt-3 text-center text-sm font-semibold text-primary-100">{submitError}</p>
+                  )}
                 </form>
               </div>
             )}
