@@ -14,6 +14,7 @@ type LeadRequest = {
 type LeadResponse = {
   status: (code: number) => LeadResponse
   json: (body: unknown) => void
+  send: (body: unknown) => void
   setHeader: (name: string, value: string | string[]) => void
 }
 
@@ -137,7 +138,9 @@ export default async function handler(req: LeadRequest, res: LeadResponse) {
     await appendLead(lead)
     res.status(200).json({ ok: true })
   } catch (error) {
-    console.error('Lead API failed', { message: getErrorMessage(error) })
-    res.status(500).json({ ok: false, message: getErrorMessage(error) })
+    const message = getErrorMessage(error)
+    console.error('Lead API failed', { message })
+    res.setHeader('Content-Type', 'application/json; charset=utf-8')
+    res.status(500).send(JSON.stringify({ ok: false, message }))
   }
 }
