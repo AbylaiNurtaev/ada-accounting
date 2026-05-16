@@ -1,10 +1,11 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { CheckCircle2, X } from 'lucide-react'
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import type { FormEvent, KeyboardEvent } from 'react'
 import { submitLead } from '../lib/submitLead'
 
 const POPUP_SESSION_KEY = 'jadi-consultation-popup-closed-v2'
+export const OPEN_CONSULTATION_POPUP_EVENT = 'jadi-open-consultation-popup'
 
 const benefits = [
   'Анализ вашей ниши',
@@ -22,6 +23,11 @@ export function ConsultationPopup() {
   const nameInputRef = useRef<HTMLInputElement>(null)
   const closeButtonRef = useRef<HTMLButtonElement>(null)
 
+  const closePopup = useCallback(() => {
+    sessionStorage.setItem(POPUP_SESSION_KEY, 'true')
+    setOpen(false)
+  }, [])
+
   useEffect(() => {
     if (sessionStorage.getItem(POPUP_SESSION_KEY)) return
 
@@ -30,6 +36,20 @@ export function ConsultationPopup() {
     }, 700)
 
     return () => window.clearTimeout(timer)
+  }, [])
+
+  useEffect(() => {
+    const onOpenPopup = () => {
+      setSent(false)
+      setSubmitError('')
+      setOpen(true)
+    }
+
+    window.addEventListener(OPEN_CONSULTATION_POPUP_EVENT, onOpenPopup)
+
+    return () => {
+      window.removeEventListener(OPEN_CONSULTATION_POPUP_EVENT, onOpenPopup)
+    }
   }, [])
 
   useEffect(() => {
@@ -54,12 +74,7 @@ export function ConsultationPopup() {
       document.body.style.overflow = previousOverflow
       window.removeEventListener('keydown', onKeyDown)
     }
-  }, [open])
-
-  const closePopup = () => {
-    sessionStorage.setItem(POPUP_SESSION_KEY, 'true')
-    setOpen(false)
-  }
+  }, [closePopup, open])
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -148,7 +163,7 @@ export function ConsultationPopup() {
             {sent ? (
               <div className="flex min-h-[360px] flex-col items-center justify-center px-3 py-10 text-center">
                 <CheckCircle2 className="h-14 w-14 text-primary-500" />
-                <h2 className="mt-5 text-3xl font-extrabold text-white">Заявка принята</h2>
+                <h2 className="mt-5 text-3xl font-extrabold text-white">Заявка успешно отправлена</h2>
                 <p className="mt-3 max-w-md text-base leading-relaxed text-zinc-200/85">
                   Спасибо. Команда JADI group свяжется с вами и подготовит первые рекомендации по росту.
                 </p>
@@ -229,9 +244,13 @@ export function ConsultationPopup() {
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="mt-6 w-full rounded-full border border-primary-500 bg-primary-500 px-7 py-3.5 text-sm font-extrabold text-black shadow-[0_16px_45px_rgba(255,212,0,0.18)] transition hover:-translate-y-0.5 hover:bg-primary-100"
+                    className={`lead-submit-button mt-6 w-full rounded-full border border-primary-500 bg-primary-500 px-7 py-3.5 text-sm font-extrabold text-black shadow-[0_16px_45px_rgba(255,212,0,0.18)] transition hover:-translate-y-0.5 hover:bg-primary-100 ${submitting ? 'lead-submit-button--loading' : ''}`}
                   >
-                    {submitting ? 'Отправляем...' : 'Получить консультацию'}
+                    <span className="lead-submit-button__shine" aria-hidden="true" />
+                    <span className="relative z-10 inline-flex items-center justify-center gap-2">
+                      {submitting && <span className="lead-submit-button__spinner" aria-hidden="true" />}
+                      {submitting ? 'Отправляем...' : 'Получить консультацию'}
+                    </span>
                   </button>
                   {submitError && (
                     <p className="mt-3 text-center text-sm font-semibold text-primary-100">{submitError}</p>

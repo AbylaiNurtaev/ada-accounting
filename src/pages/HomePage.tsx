@@ -1,7 +1,6 @@
 import { CasesSection } from '../components/CasesSection'
 import { ConsultationPopup } from '../components/ConsultationPopup'
 import { Benefits } from '../sections/Benefits'
-import { Contact } from '../sections/Contact'
 import { Footer } from '../sections/Footer'
 import { Header } from '../sections/Header'
 import { Hero } from '../sections/Hero'
@@ -18,7 +17,6 @@ export function HomePage() {
         <CasesSection />
         <Benefits />
         <Numbers />
-        <Contact />
       </main>
       <Footer />
       <ConsultationPopup />

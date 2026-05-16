@@ -1,7 +1,5 @@
 import {
-  BarChart3,
   BriefcaseBusiness,
-  Building2,
   ChartNoAxesCombined,
   UserRoundCheck,
 } from 'lucide-react'
@@ -10,7 +8,6 @@ export const navItems = [
   { label: 'Услуги', href: '#services' },
   { label: 'Преимущества', href: '#benefits' },
   { label: 'FAQ', href: '#faq' },
-  { label: 'Контакты', href: '#contact' },
 ]
 
 export const aboutStats = [
@@ -130,10 +127,4 @@ export const faqs = [
     answer:
       'После брифинга и экспресс-аудита базы подключаемся обычно в течение 1-3 рабочих дней с выделенным специалистом.',
   },
-]
-
-export const contactDetails = [
-  { icon: BarChart3, text: 'Бесплатный аудит базы 1С при подключении' },
-  { icon: Building2, text: 'Онлайн-сопровождение по Казахстану и миру' },
-  { icon: ChartNoAxesCombined, text: 'Филиал в Алматы для офлайн-встреч' },
 ]

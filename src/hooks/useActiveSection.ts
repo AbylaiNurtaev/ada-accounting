@@ -6,7 +6,6 @@ const sectionIds = [
   'benefits',
   'numbers',
   'faq',
-  'contact',
 ] as const
 
 export function useActiveSection() {

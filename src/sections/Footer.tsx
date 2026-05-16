@@ -2,7 +2,7 @@ import { AtSign, Clock3, Mail, MapPin, Phone } from 'lucide-react'
 
 export function Footer() {
   return (
-    <footer className="bg-black pt-14 text-white">
+    <footer id="contacts" className="bg-black pt-14 text-white">
       <div className="container grid gap-10 pb-10 md:grid-cols-2 lg:grid-cols-3">
         <div>
           <h3 className="mb-5 text-sm font-bold uppercase tracking-wide text-white">Меню</h3>
@@ -10,7 +10,7 @@ export function Footer() {
             <li><a href="#services" className="hover:text-primary-100">Калькулятор цен</a></li>
             <li><a href="#services" className="hover:text-primary-100">Тарифы</a></li>
             <li><a href="#services" className="hover:text-primary-100">Услуги</a></li>
-            <li><a href="#contact" className="hover:text-primary-100">Контакты</a></li>
+            <li><a href="#contacts" className="hover:text-primary-100">Контакты</a></li>
           </ul>
         </div>
 
