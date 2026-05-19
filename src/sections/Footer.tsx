@@ -49,12 +49,6 @@ export function Footer() {
           @ JADI GROUP, все права защищены.
         </div>
       </div>
-
-      <div className="bg-primary-500 py-10">
-        <div className="container text-center">
-          <img src="/jadi-logo-dark.svg" alt="JADI GROUP" className="mx-auto h-28 w-auto" />
-        </div>
-      </div>
     </footer>
   )
 }
