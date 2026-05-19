@@ -249,7 +249,7 @@ export const cases: CaseStudy[] = [
   },
   {
     id: 'mr-b-academy',
-    title: 'Mr B Academy',
+    title: 'MRB Academy',
     description: 'Школа подготовки к IELTS — платформа и маркетинг.',
     image:
       'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80',
