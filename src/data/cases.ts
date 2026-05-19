@@ -3,6 +3,7 @@ export type CaseStudy = {
   title: string
   description: string
   image: string
+  images?: string[]
   category: string
 }
 

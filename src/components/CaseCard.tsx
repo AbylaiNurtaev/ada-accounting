@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import type { CaseStudy } from '../data/cases'
 
 const MARQUEE_CHUNK =
@@ -29,8 +29,24 @@ type CaseCardProps = {
 }
 
 export function CaseCard({ item, index }: CaseCardProps) {
+  const galleryImages = useMemo(() => item.images?.length ? item.images : [item.image], [item.image, item.images])
+  const [activeImageIndex, setActiveImageIndex] = useState(0)
   const [imageLoaded, setImageLoaded] = useState(false)
   const [imageFailed, setImageFailed] = useState(false)
+  const activeImage = galleryImages[activeImageIndex] ?? item.image
+
+  useEffect(() => {
+    galleryImages.forEach((src) => {
+      const image = new Image()
+      image.decoding = 'async'
+      image.src = src
+    })
+  }, [galleryImages])
+
+  useEffect(() => {
+    setImageLoaded(false)
+    setImageFailed(false)
+  }, [activeImage])
 
   return (
     <motion.article
@@ -68,7 +84,8 @@ export function CaseCard({ item, index }: CaseCardProps) {
           </div>
           <div className="h-full w-full origin-center transition-transform duration-[650ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.08]">
             <img
-              src={item.image}
+              key={activeImage}
+              src={activeImage}
               alt={item.title}
               className={`h-full w-full object-cover transition-opacity duration-700 ${
                 imageLoaded && !imageFailed ? 'opacity-100' : 'opacity-0'
@@ -91,6 +108,23 @@ export function CaseCard({ item, index }: CaseCardProps) {
           <span className="absolute left-2 top-2 rounded-full border border-primary-500/35 bg-black/50 px-2 py-0.5 text-[7px] font-semibold uppercase tracking-widest text-primary-100 backdrop-blur-md sm:left-4 sm:top-4 sm:px-3 sm:py-1 sm:text-[10px]">
             {item.category}
           </span>
+
+          {galleryImages.length > 1 && (
+            <div className="absolute inset-x-2 bottom-2 flex gap-1.5 sm:inset-x-4 sm:bottom-4">
+              {galleryImages.map((src, imageIndex) => (
+                <button
+                  type="button"
+                  key={src}
+                  aria-label={`${item.title} image ${imageIndex + 1}`}
+                  onClick={() => setActiveImageIndex(imageIndex)}
+                  onMouseEnter={() => setActiveImageIndex(imageIndex)}
+                  className={`h-1.5 flex-1 rounded-full transition ${
+                    activeImageIndex === imageIndex ? 'bg-cyber-accent' : 'bg-white/35 hover:bg-white/65'
+                  }`}
+                />
+              ))}
+            </div>
+          )}
         </div>
 
         <div className="relative flex min-h-0 flex-1 flex-col bg-cyber-bg px-3 pb-3 pt-3 sm:px-6 sm:pb-5 sm:pt-5">
