@@ -69,36 +69,36 @@ export function Services() {
           centered
         />
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-2">
-          <article className="glass group relative overflow-hidden rounded-[2rem] p-6 transition duration-300 hover:-translate-y-1 hover:border-primary-500/70 hover:shadow-[0_28px_90px_rgba(255,212,0,0.18)] sm:p-8">
+        <div className="mt-12 grid items-stretch gap-6 lg:grid-cols-3">
+          <article className="glass group relative flex h-full min-h-[640px] flex-col overflow-hidden rounded-[2rem] p-6 transition duration-300 hover:-translate-y-1 hover:border-primary-500/70 hover:shadow-[0_28px_90px_rgba(255,212,0,0.18)] sm:p-8">
             <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-primary-500/80 to-transparent" />
-            <div className="inline-flex rounded-full bg-primary-500 px-8 py-2 text-xl font-extrabold uppercase tracking-wide text-black">
+            <div className="inline-flex w-fit rounded-full bg-primary-500 px-8 py-2 text-xl font-extrabold uppercase tracking-wide text-black">
               ТАРИФ 1
             </div>
             <p className="mt-5 max-w-lg text-sm font-semibold italic leading-relaxed text-primary-100">
               Таргет для стабильного потока заявок. Быстрый запуск и контроль бюджета.
             </p>
 
-            <div className="mt-8">
+            <div className="mt-8 flex-1">
               <h3 className="text-xl font-extrabold uppercase tracking-wide text-white">ТАРГЕТ</h3>
               <TariffList items={tariffOneItems} />
             </div>
 
-            <div className="mt-8 inline-flex rounded-2xl bg-gradient-to-r from-primary-500 to-primary-50 px-8 py-3 text-xl font-extrabold text-black shadow-[0_18px_50px_rgba(255,212,0,0.16)]">
+            <div className="mt-8 inline-flex w-fit rounded-2xl bg-gradient-to-r from-primary-500 to-primary-50 px-8 py-3 text-xl font-extrabold leading-none text-black shadow-[0_18px_50px_rgba(255,212,0,0.16)]">
               от 200.000 ₸
             </div>
           </article>
 
-          <article className="glass group relative overflow-hidden rounded-[2rem] p-6 transition duration-300 hover:-translate-y-1 hover:border-primary-500/70 hover:shadow-[0_28px_90px_rgba(255,212,0,0.18)] sm:p-8">
+          <article className="glass group relative flex h-full min-h-[640px] flex-col overflow-hidden rounded-[2rem] p-6 transition duration-300 hover:-translate-y-1 hover:border-primary-500/70 hover:shadow-[0_28px_90px_rgba(255,212,0,0.18)] sm:p-8">
             <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-primary-500/80 to-transparent" />
-            <div className="inline-flex rounded-full bg-primary-500 px-8 py-2 text-xl font-extrabold uppercase tracking-wide text-black">
+            <div className="inline-flex w-fit rounded-full bg-primary-500 px-8 py-2 text-xl font-extrabold uppercase tracking-wide text-black">
               ТАРИФ 2
             </div>
             <p className="mt-5 max-w-lg text-sm font-semibold italic leading-relaxed text-primary-100">
               SMM + таргет + контроль маркетолога. Укрепление бренда и системный поток клиентов.
             </p>
 
-            <div className="mt-8 grid gap-7 md:grid-cols-2">
+            <div className="mt-8 grid flex-1 gap-7">
               <div>
                 <h3 className="text-xl font-extrabold uppercase tracking-wide text-white">ТАРГЕТ</h3>
                 <TariffList items={tariffTwoTargetItems} />
@@ -109,38 +109,34 @@ export function Services() {
               </div>
             </div>
 
-            <div className="mt-8 inline-flex rounded-2xl bg-gradient-to-r from-primary-500 to-primary-50 px-8 py-3 text-xl font-extrabold text-black shadow-[0_18px_50px_rgba(255,212,0,0.16)]">
+            <div className="mt-8 inline-flex w-fit rounded-2xl bg-gradient-to-r from-primary-500 to-primary-50 px-8 py-3 text-xl font-extrabold leading-none text-black shadow-[0_18px_50px_rgba(255,212,0,0.16)]">
               от 400.000 ₸
             </div>
           </article>
-        </div>
 
-        <article className="glass group relative mt-7 overflow-hidden rounded-[2rem] p-6 transition duration-300 hover:-translate-y-1 hover:border-primary-500/70 hover:shadow-[0_28px_90px_rgba(255,212,0,0.18)] sm:p-8">
-          <div className="absolute inset-x-12 top-0 h-px bg-gradient-to-r from-transparent via-primary-500/80 to-transparent" />
-          <div className="text-center">
-            <div className="inline-flex rounded-full bg-primary-500 px-9 py-2 text-xl font-extrabold uppercase tracking-wide text-black">
+          <article className="glass group relative flex h-full min-h-[640px] flex-col overflow-hidden rounded-[2rem] p-6 transition duration-300 hover:-translate-y-1 hover:border-primary-500/70 hover:shadow-[0_28px_90px_rgba(255,212,0,0.18)] sm:p-8">
+            <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-primary-500/80 to-transparent" />
+            <div className="inline-flex w-fit rounded-full bg-primary-500 px-8 py-2 text-xl font-extrabold uppercase tracking-wide text-black">
               ТАРИФ 3
             </div>
-            <p className="mx-auto mt-5 max-w-xl text-sm font-semibold italic leading-relaxed text-primary-100">
+            <p className="mt-5 max-w-lg text-sm font-semibold italic leading-relaxed text-primary-100">
               Полная маркетинговая система для масштабирования.
             </p>
-          </div>
 
-          <div className="mt-9 grid gap-7 lg:grid-cols-3">
-            {tariffThreeColumns.map((column) => (
-              <div key={column.title} className="rounded-3xl border border-primary-500/15 bg-black/35 p-5">
-                <h3 className="text-xl font-extrabold text-white">{column.title}</h3>
-                <TariffList items={column.items} />
-              </div>
-            ))}
-          </div>
+            <div className="mt-8 grid flex-1 gap-4">
+              {tariffThreeColumns.map((column) => (
+                <div key={column.title} className="rounded-2xl border border-primary-500/15 bg-black/35 p-4">
+                  <h3 className="text-lg font-extrabold text-white">{column.title}</h3>
+                  <TariffList items={column.items} />
+                </div>
+              ))}
+            </div>
 
-          <div className="mt-8 flex justify-start">
-            <div className="rounded-2xl bg-gradient-to-r from-primary-500 to-primary-50 px-9 py-4 text-2xl font-extrabold text-black shadow-[0_18px_50px_rgba(255,212,0,0.18)]">
+            <div className="mt-8 inline-flex w-fit rounded-2xl bg-gradient-to-r from-primary-500 to-primary-50 px-8 py-3 text-xl font-extrabold leading-none text-black shadow-[0_18px_50px_rgba(255,212,0,0.16)]">
               от 600.000 ₸
             </div>
-          </div>
-        </article>
+          </article>
+        </div>
 
         <article className="glass group mt-7 grid gap-5 overflow-hidden rounded-[2rem] p-6 transition duration-300 hover:-translate-y-1 hover:border-primary-500/70 hover:shadow-[0_28px_90px_rgba(255,212,0,0.16)] md:grid-cols-[0.8fr_1.3fr_0.9fr] md:items-center sm:p-8">
           <div>
@@ -150,7 +146,7 @@ export function Services() {
           <p className="text-base font-semibold leading-relaxed text-zinc-100">
             Соберите тариф под себя. Платите только за то, что действительно нужно бизнесу.
           </p>
-          <div className="rounded-2xl bg-gradient-to-r from-primary-500 to-primary-50 px-6 py-4 text-center text-lg font-extrabold text-black">
+          <div className="rounded-2xl bg-gradient-to-r from-primary-500 to-primary-50 px-5 py-3 text-center text-base font-extrabold leading-tight text-black">
             Цена определяется индивидуально
           </div>
         </article>
