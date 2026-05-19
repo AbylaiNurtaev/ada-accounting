@@ -50,7 +50,7 @@ export const cases: CaseStudy[] = [
   },
   {
     id: 'jansaya',
-    title: 'ЖАНСАЯ',
+    title: 'САНАТОРИЙ ЖАНСАЯ',
     description: 'Санаторий в пос. Сарыагаш, ЮКО — премиальный оздоровительный комплекс.',
     image:
       'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80',
