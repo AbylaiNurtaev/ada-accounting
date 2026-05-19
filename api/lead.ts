@@ -67,7 +67,7 @@ function buildLeadMessage(lead: Lead) {
   return [
     'Новая заявка с сайта',
     '',
-    `<b>Бизнес:</b> ${escapeHtml(lead.business)}`,
+    `<b>Бизнес:</b> ${escapeHtml(lead.business || 'Не указано')}`,
     `<b>Имя:</b> ${escapeHtml(lead.name)}`,
     `<b>Телефон:</b> ${escapeHtml(lead.phone)}`,
   ].join('\n')
@@ -153,8 +153,8 @@ export default async function handler(req: LeadRequest, res: LeadResponse) {
 
   const lead = parseLead(req.body)
 
-  if (!lead.name || !lead.phone || !lead.business) {
-    res.status(400).json({ ok: false, message: 'Name, phone and business are required' })
+  if (!lead.name || !lead.phone) {
+    res.status(400).json({ ok: false, message: 'Name and phone are required' })
     return
   }
 

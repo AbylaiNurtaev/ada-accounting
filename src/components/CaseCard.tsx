@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import type { CaseStudy } from '../data/cases'
 
 const MARQUEE_CHUNK =
-  'jadi group | КЕЙСЫ | jadi group | КЕЙСЫ | jadi group | КЕЙСЫ | '
+  'JADI GROUP | КЕЙСЫ | JADI GROUP | КЕЙСЫ | JADI GROUP | КЕЙСЫ | '
 
 function CaseMarquee() {
   return (
@@ -52,6 +52,12 @@ export function CaseCard({ item, index }: CaseCardProps) {
 
       <div className="relative flex min-h-0 flex-1 flex-col">
         <div className="relative aspect-[4/3] min-h-[105px] overflow-hidden sm:aspect-[16/11] sm:min-h-[280px]">
+          <div className="absolute inset-0 flex flex-col justify-end bg-[radial-gradient(circle_at_30%_20%,rgba(255,212,0,0.28),transparent_34%),linear-gradient(135deg,#171717,#050505_60%,#241f05)] p-4">
+            <span className="w-fit rounded-full border border-primary-500/35 bg-black/50 px-2 py-0.5 text-[7px] font-semibold uppercase tracking-widest text-primary-100">
+              {item.category}
+            </span>
+            <span className="mt-3 text-lg font-extrabold uppercase leading-tight text-white">{item.title}</span>
+          </div>
           <div className="h-full w-full origin-center transition-transform duration-[650ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.08]">
             <img
               src={item.image}
@@ -59,6 +65,9 @@ export function CaseCard({ item, index }: CaseCardProps) {
               className="h-full w-full object-cover"
               loading="lazy"
               decoding="async"
+              onError={(event) => {
+                event.currentTarget.style.display = 'none'
+              }}
             />
           </div>
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black via-black/35 to-transparent" />

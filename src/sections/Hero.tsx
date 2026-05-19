@@ -1,12 +1,7 @@
 import { motion } from 'framer-motion'
 import { AnimatedSection } from '../components/AnimatedSection'
-import { OPEN_CONSULTATION_POPUP_EVENT } from '../components/ConsultationPopup'
 
 export function Hero() {
-  const openConsultationPopup = () => {
-    window.dispatchEvent(new Event(OPEN_CONSULTATION_POPUP_EVENT))
-  }
-
   return (
     <AnimatedSection id="hero" className="relative overflow-hidden py-20 md:py-28">
       <div className="container grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
@@ -23,13 +18,12 @@ export function Hero() {
             аналитика и рост продаж в одном окне.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
-            <button
-              type="button"
-              onClick={openConsultationPopup}
+            <a
+              href="#faq"
               className="rounded-full border border-primary-500 bg-primary-500 px-7 py-3 text-sm font-semibold text-black transition hover:-translate-y-0.5 hover:bg-primary-100"
             >
-              Оставить заявку
-            </button>
+              С чего начать?
+            </a>
             <a
               href="#services"
               className="rounded-full border border-primary-500/35 bg-black/40 px-7 py-3 text-sm font-semibold text-zinc-100 transition hover:border-primary-500 hover:text-primary-100"
@@ -45,7 +39,7 @@ export function Hero() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
         >
-          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-primary-100">Ваши выгоды</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-primary-100">О нас</p>
           <ul className="mt-5 space-y-4 text-sm text-zinc-100">
             <li>5+ лет опыта в digital-маркетинге</li>
             <li>120+ успешных проектов и клиентов</li>

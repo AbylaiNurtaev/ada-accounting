@@ -165,7 +165,7 @@ export function ConsultationPopup() {
                 <CheckCircle2 className="h-14 w-14 text-primary-500" />
                 <h2 className="mt-5 text-3xl font-extrabold text-white">Заявка успешно отправлена</h2>
                 <p className="mt-3 max-w-md text-base leading-relaxed text-zinc-200/85">
-                  Спасибо. Команда JADI group свяжется с вами и подготовит первые рекомендации по росту.
+                  Спасибо, мы свяжемся с вами и подготовим первые рекомендации по росту.
                 </p>
                 <button
                   type="button"
@@ -179,13 +179,13 @@ export function ConsultationPopup() {
               <div className="grid gap-7 lg:grid-cols-[0.92fr_1.08fr]">
                 <aside className="rounded-3xl border border-primary-500/20 bg-black/45 p-6">
                   <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary-100">
-                    JADI group
+                    JADI GROUP
                   </p>
                   <h2 id="consultation-popup-title" className="mt-4 text-3xl font-extrabold leading-tight text-white">
                     Расскажите о вашем бизнесе
                   </h2>
                   <p className="mt-4 text-sm leading-relaxed text-zinc-200/85">
-                    Оставьте контакты, и маркетолог JADI group покажет, как усилить рекламу, заявки и продажи.
+                    Оставьте контакты, и маркетолог JADI GROUP покажет, как усилить рекламу, заявки и продажи.
                   </p>
 
                   <div className="mt-7 space-y-3">

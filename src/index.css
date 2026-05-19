@@ -36,4 +36,44 @@ body {
   .liquid-orb {
     @apply pointer-events-none absolute rounded-full blur-3xl;
   }
+
+  .lead-submit-button {
+    @apply relative overflow-hidden disabled:cursor-not-allowed disabled:opacity-80;
+  }
+
+  .lead-submit-button__shine {
+    @apply pointer-events-none absolute inset-y-0 -left-1/3 w-1/3 skew-x-[-18deg] bg-white/35 opacity-0;
+  }
+
+  .lead-submit-button--loading .lead-submit-button__shine {
+    animation: lead-button-shine 1.25s ease-in-out infinite;
+  }
+
+  .lead-submit-button__spinner {
+    @apply h-4 w-4 rounded-full border-2 border-black/25 border-t-black;
+    animation: lead-button-spin 0.7s linear infinite;
+  }
+}
+
+@keyframes lead-button-shine {
+  0% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+
+  20%,
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(420%);
+  }
+}
+
+@keyframes lead-button-spin {
+  to {
+    transform: rotate(360deg);
+  }
 }

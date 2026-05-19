@@ -50,9 +50,10 @@ export function CasesSection() {
 
   useEffect(() => {
     if (!emblaApi) return
-    onScroll()
     emblaApi.on('scroll', onScroll)
     emblaApi.on('reInit', onScroll)
+    window.requestAnimationFrame(onScroll)
+
     return () => {
       emblaApi.off('scroll', onScroll)
       emblaApi.off('reInit', onScroll)
@@ -61,6 +62,7 @@ export function CasesSection() {
 
   return (
     <motion.section
+      id="cases"
       className="relative overflow-hidden bg-cyber-bg py-14 sm:py-24 lg:py-28"
       initial={{ opacity: 0, y: 48 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -90,7 +92,7 @@ export function CasesSection() {
           >
             Кейсы{' '}
             <span className="bg-gradient-to-r from-white to-white/60 bg-clip-text text-transparent">
-              Jadi Group
+              JADI GROUP
             </span>
           </motion.h2>
           <motion.p

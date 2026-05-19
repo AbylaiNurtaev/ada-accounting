@@ -11,8 +11,8 @@ export async function submitLead(lead: LeadFormData) {
     business: lead.business?.trim(),
   }
 
-  if (!data.name || !data.phone || !data.business) {
-    throw new Error('Name, phone and business are required')
+  if (!data.name || !data.phone) {
+    throw new Error('Name and phone are required')
   }
 
   const response = await fetch('/api/lead', {
