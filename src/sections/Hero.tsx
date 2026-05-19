@@ -6,6 +6,11 @@ export function Hero() {
     <AnimatedSection id="hero" className="relative overflow-hidden py-20 md:py-28">
       <div className="container grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
         <div>
+          <img
+            src="/jadi-logo.svg"
+            alt="JADI group"
+            className="mb-8 h-auto w-full max-w-[460px]"
+          />
           <p className="glass-soft mb-5 inline-flex rounded-full px-4 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-primary-100">
             КОМПЛЕКСНОЕ МАРКЕТИНГОВОЕ СОПРОВОЖДЕНИЕ
           </p>
