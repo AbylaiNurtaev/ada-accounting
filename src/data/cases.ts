@@ -241,7 +241,7 @@ export const cases: CaseStudy[] = [
   },
   {
     id: 'zerkalo',
-    title: 'ZerKalo',
+    title: 'ZERKALO COFFEE',
     description: 'Кофейня — отражение вкуса: бренд, меню и digital.',
     image:
       'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80',
