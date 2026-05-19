@@ -158,7 +158,7 @@ export function CasesSection() {
           className="overflow-hidden pl-4 sm:pl-6 lg:pl-[max(1.5rem,calc((100vw-1320px)/2+1.5rem))]"
           ref={emblaRef}
         >
-          <div className="flex items-start gap-3 pb-2 sm:gap-6 [-webkit-overflow-scrolling:touch]">
+          <div className="flex items-stretch gap-3 pb-2 sm:gap-6 [-webkit-overflow-scrolling:touch]">
             {cases.map((item, index) => (
               <div className={SLIDE} key={item.id}>
                 <CaseCard item={item} index={index} />

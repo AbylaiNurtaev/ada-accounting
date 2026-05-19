@@ -34,7 +34,7 @@ export function CaseCard({ item, index }: CaseCardProps) {
 
   return (
     <motion.article
-      className="group relative flex flex-col overflow-hidden rounded-lg border border-white/[0.07] bg-black/50 shadow-[0_24px_80px_-32px_rgba(0,0,0,0.85)] backdrop-blur-xl transition-[box-shadow] duration-500 will-change-transform sm:rounded-2xl"
+      className="group relative flex h-[300px] flex-col overflow-hidden rounded-lg border border-white/[0.07] bg-black/50 shadow-[0_24px_80px_-32px_rgba(0,0,0,0.85)] backdrop-blur-xl transition-[box-shadow] duration-500 will-change-transform sm:h-[520px] sm:rounded-2xl md:h-[560px]"
       initial={{ opacity: 0, y: 36 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.25 }}
@@ -54,8 +54,8 @@ export function CaseCard({ item, index }: CaseCardProps) {
 
       <CaseMarquee />
 
-      <div className="relative flex min-h-0 flex-col">
-        <div className="relative aspect-[4/3] overflow-hidden sm:aspect-[16/11]">
+      <div className="relative flex min-h-0 flex-1 flex-col">
+        <div className="relative h-[116px] shrink-0 overflow-hidden sm:h-[280px] md:h-[300px]">
           <div
             className={`absolute inset-0 flex flex-col justify-end bg-[radial-gradient(circle_at_30%_20%,rgba(255,212,0,0.28),transparent_34%),linear-gradient(135deg,#171717,#050505_60%,#241f05)] p-4 transition-opacity duration-500 ${
               imageLoaded && !imageFailed ? 'opacity-0' : 'opacity-100'
@@ -93,19 +93,19 @@ export function CaseCard({ item, index }: CaseCardProps) {
           </span>
         </div>
 
-        <div className="relative flex flex-col bg-cyber-bg px-3 pb-3 pt-3 sm:px-6 sm:pb-5 sm:pt-5">
-          <div className="space-y-1 sm:space-y-2">
-            <h3 className="font-display text-sm font-extrabold uppercase leading-tight tracking-wide text-white sm:text-2xl">
+        <div className="relative flex min-h-0 flex-1 flex-col bg-cyber-bg px-3 pb-3 pt-3 sm:px-6 sm:pb-5 sm:pt-5">
+          <div className="min-h-0 space-y-1 sm:space-y-2">
+            <h3 className="overflow-hidden font-display text-sm font-extrabold uppercase leading-tight tracking-wide text-white [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2] sm:text-2xl">
               {item.title}
             </h3>
-            <p className="overflow-hidden text-[10px] leading-snug text-white/65 [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2] sm:text-[15px] sm:leading-relaxed sm:[-webkit-line-clamp:unset]">
+            <p className="overflow-hidden text-[10px] leading-snug text-white/65 [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2] sm:text-[15px] sm:leading-relaxed sm:[-webkit-line-clamp:3]">
               {item.description}
             </p>
           </div>
 
           <motion.button
             type="button"
-            className="mt-4 inline-flex w-fit items-center justify-center rounded-full bg-cyber-accent px-3 py-1.5 text-[10px] font-semibold text-black shadow-[0_12px_40px_-12px_rgba(255,212,0,0.65)] transition-shadow duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyber-accent sm:mt-5 sm:px-7 sm:py-2.5 sm:text-sm"
+            className="mt-auto inline-flex w-fit items-center justify-center rounded-full bg-cyber-accent px-3 py-1.5 text-[10px] font-semibold text-black shadow-[0_12px_40px_-12px_rgba(255,212,0,0.65)] transition-shadow duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyber-accent sm:px-7 sm:py-2.5 sm:text-sm"
             whileHover={{
               scale: 1.05,
               boxShadow: '0 16px 48px -8px rgba(255,212,0,0.85)',
