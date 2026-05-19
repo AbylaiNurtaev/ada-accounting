@@ -135,7 +135,7 @@ export function Services() {
             ))}
           </div>
 
-          <div className="mt-8 flex justify-end">
+          <div className="mt-8 flex justify-start">
             <div className="rounded-2xl bg-gradient-to-r from-primary-500 to-primary-50 px-9 py-4 text-2xl font-extrabold text-black shadow-[0_18px_50px_rgba(255,212,0,0.18)]">
               от 600.000 ₸
             </div>
