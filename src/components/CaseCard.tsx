@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useState } from 'react'
 import type { CaseStudy } from '../data/cases'
 
 const MARQUEE_CHUNK =
@@ -28,9 +29,12 @@ type CaseCardProps = {
 }
 
 export function CaseCard({ item, index }: CaseCardProps) {
+  const [imageLoaded, setImageLoaded] = useState(false)
+  const [imageFailed, setImageFailed] = useState(false)
+
   return (
     <motion.article
-      className="group relative flex h-full min-h-[270px] flex-col overflow-hidden rounded-lg border border-white/[0.07] bg-black/50 shadow-[0_24px_80px_-32px_rgba(0,0,0,0.85)] backdrop-blur-xl transition-[box-shadow] duration-500 will-change-transform sm:min-h-[520px] sm:rounded-2xl md:min-h-[560px]"
+      className="group relative flex flex-col overflow-hidden rounded-lg border border-white/[0.07] bg-black/50 shadow-[0_24px_80px_-32px_rgba(0,0,0,0.85)] backdrop-blur-xl transition-[box-shadow] duration-500 will-change-transform sm:rounded-2xl"
       initial={{ opacity: 0, y: 36 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.25 }}
@@ -50,9 +54,13 @@ export function CaseCard({ item, index }: CaseCardProps) {
 
       <CaseMarquee />
 
-      <div className="relative flex min-h-0 flex-1 flex-col">
-        <div className="relative aspect-[4/3] min-h-[105px] overflow-hidden sm:aspect-[16/11] sm:min-h-[280px]">
-          <div className="absolute inset-0 flex flex-col justify-end bg-[radial-gradient(circle_at_30%_20%,rgba(255,212,0,0.28),transparent_34%),linear-gradient(135deg,#171717,#050505_60%,#241f05)] p-4">
+      <div className="relative flex min-h-0 flex-col">
+        <div className="relative aspect-[4/3] overflow-hidden sm:aspect-[16/11]">
+          <div
+            className={`absolute inset-0 flex flex-col justify-end bg-[radial-gradient(circle_at_30%_20%,rgba(255,212,0,0.28),transparent_34%),linear-gradient(135deg,#171717,#050505_60%,#241f05)] p-4 transition-opacity duration-500 ${
+              imageLoaded && !imageFailed ? 'opacity-0' : 'opacity-100'
+            }`}
+          >
             <span className="w-fit rounded-full border border-primary-500/35 bg-black/50 px-2 py-0.5 text-[7px] font-semibold uppercase tracking-widest text-primary-100">
               {item.category}
             </span>
@@ -62,10 +70,17 @@ export function CaseCard({ item, index }: CaseCardProps) {
             <img
               src={item.image}
               alt={item.title}
-              className="h-full w-full object-cover"
-              loading="lazy"
+              className={`h-full w-full object-cover transition-opacity duration-700 ${
+                imageLoaded && !imageFailed ? 'opacity-100' : 'opacity-0'
+              }`}
+              loading={index < 6 ? 'eager' : 'lazy'}
               decoding="async"
+              fetchPriority={index < 4 ? 'high' : 'auto'}
+              onLoad={() => {
+                setImageLoaded(true)
+              }}
               onError={(event) => {
+                setImageFailed(true)
                 event.currentTarget.style.display = 'none'
               }}
             />
@@ -78,7 +93,7 @@ export function CaseCard({ item, index }: CaseCardProps) {
           </span>
         </div>
 
-        <div className="relative flex flex-1 flex-col justify-between gap-3 bg-cyber-bg px-3 pb-3 pt-3 sm:gap-5 sm:px-6 sm:pb-6 sm:pt-5">
+        <div className="relative flex flex-col bg-cyber-bg px-3 pb-3 pt-3 sm:px-6 sm:pb-5 sm:pt-5">
           <div className="space-y-1 sm:space-y-2">
             <h3 className="font-display text-sm font-extrabold uppercase leading-tight tracking-wide text-white sm:text-2xl">
               {item.title}
@@ -90,7 +105,7 @@ export function CaseCard({ item, index }: CaseCardProps) {
 
           <motion.button
             type="button"
-            className="inline-flex w-fit items-center justify-center rounded-full bg-cyber-accent px-3 py-1.5 text-[10px] font-semibold text-black shadow-[0_12px_40px_-12px_rgba(255,212,0,0.65)] transition-shadow duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyber-accent sm:px-7 sm:py-2.5 sm:text-sm"
+            className="mt-4 inline-flex w-fit items-center justify-center rounded-full bg-cyber-accent px-3 py-1.5 text-[10px] font-semibold text-black shadow-[0_12px_40px_-12px_rgba(255,212,0,0.65)] transition-shadow duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyber-accent sm:mt-5 sm:px-7 sm:py-2.5 sm:text-sm"
             whileHover={{
               scale: 1.05,
               boxShadow: '0 16px 48px -8px rgba(255,212,0,0.85)',
