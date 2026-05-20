@@ -8,6 +8,18 @@ type CaseCardProps = {
   index: number
 }
 
+const premiumPreviewImages: Record<string, string> = {
+  pahlava: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1800&q=95',
+  'shishka-expo': 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1800&q=95',
+  'doner-dm': 'https://images.unsplash.com/photo-1561758033-d89a9ad46332?auto=format&fit=crop&w=1800&q=95',
+  '4tech': 'https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=1800&q=95',
+  'demi-porselen': 'https://images.unsplash.com/photo-1603199506016-b9a594b593c0?auto=format&fit=crop&w=1800&q=95',
+  'new-year-tableware': 'https://images.unsplash.com/photo-1482517967863-00e15c9b44be?auto=format&fit=crop&w=1800&q=95',
+  'happy-club': 'https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&fit=crop&w=1800&q=95',
+  'sarah-home': 'https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=1800&q=95',
+  volton: 'https://images.unsplash.com/photo-1498049794561-7780e7231661?auto=format&fit=crop&w=1800&q=95',
+}
+
 function isCaseImage(image: string | CaseImage): image is CaseImage {
   return typeof image !== 'string'
 }
@@ -41,7 +53,7 @@ export function CaseCard({ item, index }: CaseCardProps) {
   const [activeImageIndex, setActiveImageIndex] = useState(0)
   const [loadedImageSrc, setLoadedImageSrc] = useState('')
   const [failedImageSrc, setFailedImageSrc] = useState('')
-  const previewImage = item.image
+  const previewImage = premiumPreviewImages[item.id] ?? item.image
   const previewImageSrc = getImageSrc(previewImage)
   const previewImageFallback = getImageFallback(previewImage)
   const previewImagePlaceholder = getImagePlaceholder(previewImage)
@@ -117,13 +129,11 @@ export function CaseCard({ item, index }: CaseCardProps) {
             <span className="mt-3 text-lg font-extrabold uppercase leading-tight text-white">{item.title}</span>
           </div>
           <div className="relative h-full w-full origin-center overflow-hidden transition-transform duration-[650ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]">
-            {previewImagePlaceholder && (
+            {previewImagePlaceholder && !imageLoaded && !imageFailed && (
               <img
                 src={previewImagePlaceholder}
                 alt=""
-                className={`absolute inset-0 h-full w-full scale-105 object-cover blur-sm transition-opacity duration-300 ${
-                  imageLoaded && !imageFailed ? 'opacity-0' : 'opacity-30'
-                }`}
+                className="absolute inset-0 h-full w-full scale-105 object-cover opacity-20 blur-[2px] transition-opacity duration-200"
                 aria-hidden="true"
               />
             )}
@@ -133,7 +143,7 @@ export function CaseCard({ item, index }: CaseCardProps) {
                 key={previewImageSrc}
                 src={isCaseImage(previewImage) ? previewImageFallback : getOptimizedImageSrc(previewImageSrc)}
                 alt={item.title}
-                className={`h-full w-full object-cover transition-[opacity,filter] duration-500 group-hover:brightness-95 ${
+                className={`h-full w-full object-cover transition-[opacity,filter] duration-300 group-hover:brightness-95 ${
                   imageLoaded && !imageFailed ? 'opacity-100' : 'opacity-0'
                 }`}
                 loading={index < 2 ? 'eager' : 'lazy'}
