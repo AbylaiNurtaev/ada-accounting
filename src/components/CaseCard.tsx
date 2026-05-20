@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { useEffect, useMemo, useState } from 'react'
 import type { CaseStudy } from '../data/cases'
 
+const INSTAGRAM_URL = 'https://www.instagram.com/jadi_group/'
 const MARQUEE_CHUNK =
   'JADI GROUP | КЕЙСЫ | JADI GROUP | КЕЙСЫ | JADI GROUP | КЕЙСЫ | '
 
@@ -28,29 +29,41 @@ type CaseCardProps = {
   index: number
 }
 
+function getOptimizedImageSrc(src: string) {
+  if (!src.includes('images.unsplash.com')) return src
+
+  const url = new URL(src)
+  url.searchParams.set('auto', 'format')
+  url.searchParams.set('fit', 'crop')
+  url.searchParams.set('w', '900')
+  url.searchParams.set('q', '72')
+  return url.toString()
+}
+
 export function CaseCard({ item, index }: CaseCardProps) {
   const galleryImages = useMemo(() => item.images?.length ? item.images : [item.image], [item.image, item.images])
   const [activeImageIndex, setActiveImageIndex] = useState(0)
-  const [imageLoaded, setImageLoaded] = useState(false)
-  const [imageFailed, setImageFailed] = useState(false)
+  const [loadedImageSrc, setLoadedImageSrc] = useState('')
+  const [failedImageSrc, setFailedImageSrc] = useState('')
   const activeImage = galleryImages[activeImageIndex] ?? item.image
+  const imageLoaded = loadedImageSrc === activeImage
+  const imageFailed = failedImageSrc === activeImage
 
   useEffect(() => {
-    galleryImages.forEach((src) => {
+    galleryImages.slice(0, 1).forEach((src) => {
       const image = new Image()
       image.decoding = 'async'
-      image.src = src
+      image.src = getOptimizedImageSrc(src)
     })
   }, [galleryImages])
 
-  useEffect(() => {
-    setImageLoaded(false)
-    setImageFailed(false)
-  }, [activeImage])
-
   return (
-    <motion.article
-      className="group relative flex h-[300px] flex-col overflow-hidden rounded-lg border border-white/[0.07] bg-black/50 shadow-[0_24px_80px_-32px_rgba(0,0,0,0.85)] backdrop-blur-xl transition-[box-shadow] duration-500 will-change-transform sm:h-[520px] sm:rounded-2xl md:h-[560px]"
+    <motion.a
+      href={INSTAGRAM_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`${item.title}: открыть Instagram агентства`}
+      className="group relative flex h-[300px] cursor-pointer flex-col overflow-hidden rounded-lg border border-white/[0.07] bg-black/50 shadow-[0_24px_80px_-32px_rgba(0,0,0,0.85)] backdrop-blur-xl transition-[box-shadow,filter] duration-500 will-change-transform hover:brightness-105 sm:h-[520px] sm:rounded-2xl md:h-[560px]"
       initial={{ opacity: 0, y: 36 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.25 }}
@@ -85,19 +98,20 @@ export function CaseCard({ item, index }: CaseCardProps) {
           <div className="h-full w-full origin-center transition-transform duration-[650ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.08]">
             <img
               key={activeImage}
-              src={activeImage}
+              src={getOptimizedImageSrc(activeImage)}
               alt={item.title}
-              className={`h-full w-full object-cover transition-opacity duration-700 ${
+              className={`h-full w-full object-cover transition-[opacity,filter] duration-700 group-hover:brightness-90 ${
                 imageLoaded && !imageFailed ? 'opacity-100' : 'opacity-0'
               }`}
-              loading={index < 6 ? 'eager' : 'lazy'}
+              loading={index < 2 ? 'eager' : 'lazy'}
               decoding="async"
-              fetchPriority={index < 4 ? 'high' : 'auto'}
+              fetchPriority={index < 2 ? 'high' : 'auto'}
               onLoad={() => {
-                setImageLoaded(true)
+                setLoadedImageSrc(activeImage)
+                setFailedImageSrc('')
               }}
               onError={(event) => {
-                setImageFailed(true)
+                setFailedImageSrc(activeImage)
                 event.currentTarget.style.display = 'none'
               }}
             />
@@ -116,7 +130,11 @@ export function CaseCard({ item, index }: CaseCardProps) {
                   type="button"
                   key={src}
                   aria-label={`${item.title} image ${imageIndex + 1}`}
-                  onClick={() => setActiveImageIndex(imageIndex)}
+                  onClick={(event) => {
+                    event.preventDefault()
+                    event.stopPropagation()
+                    setActiveImageIndex(imageIndex)
+                  }}
                   onMouseEnter={() => setActiveImageIndex(imageIndex)}
                   className={`h-1.5 flex-1 rounded-full transition ${
                     activeImageIndex === imageIndex ? 'bg-cyber-accent' : 'bg-white/35 hover:bg-white/65'
@@ -137,8 +155,7 @@ export function CaseCard({ item, index }: CaseCardProps) {
             </p>
           </div>
 
-          <motion.button
-            type="button"
+          <motion.span
             className="mt-auto inline-flex w-fit items-center justify-center rounded-full bg-cyber-accent px-3 py-1.5 text-[10px] font-semibold text-black shadow-[0_12px_40px_-12px_rgba(255,212,0,0.65)] transition-shadow duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyber-accent sm:px-7 sm:py-2.5 sm:text-sm"
             whileHover={{
               scale: 1.05,
@@ -148,9 +165,9 @@ export function CaseCard({ item, index }: CaseCardProps) {
             transition={{ type: 'spring', stiffness: 420, damping: 22 }}
           >
             Подробнее
-          </motion.button>
+          </motion.span>
         </div>
       </div>
-    </motion.article>
+    </motion.a>
   )
 }

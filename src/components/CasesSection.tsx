@@ -61,14 +61,14 @@ export function CasesSection() {
   }, [emblaApi, onScroll])
 
   useEffect(() => {
-    const preloadedImages = cases.map((item) => {
+    const preloadedImages = cases.slice(0, 2).map((item) => {
       const image = new Image()
       image.decoding = 'async'
       image.src = item.image
       return image
     })
 
-    const preloadLinks = cases.slice(0, 8).map((item) => {
+    const preloadLinks = cases.slice(0, 2).map((item) => {
       const link = document.createElement('link')
       link.rel = 'preload'
       link.as = 'image'
