@@ -19,10 +19,10 @@ export function Hero() {
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <a
-              href="#faq"
+              href="#services"
               className="rounded-full border border-primary-500 bg-primary-500 px-7 py-3 text-sm font-semibold text-black transition hover:-translate-y-0.5 hover:bg-primary-100"
             >
-              С чего начать?
+              Наши услуги
             </a>
             <a
               href="#tariffs"
