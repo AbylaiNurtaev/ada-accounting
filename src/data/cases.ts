@@ -55,7 +55,8 @@ export const cases: CaseStudy[] = [
     id: 'pahlava',
     title: 'Cafe Pahlava',
     description: 'Кафе «Pahlava», г. Астана — айдентика и digital для премиального гастрономического пространства.',
-    image: caseImage(pahlava1, pahlava1Png, pahlava1Blur),
+    image:
+      'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80',
     images: [
       caseImage(pahlava1, pahlava1Png, pahlava1Blur),
       caseImage(pahlava2, pahlava2Png, pahlava2Blur),
@@ -66,7 +67,8 @@ export const cases: CaseStudy[] = [
     id: 'shishka-expo',
     title: 'ШИШКА EXPO',
     description: 'Лаундж-бар премиум-класса: атмосфера, брендинг и визуальная система.',
-    image: caseImage(lounge1, lounge1Png, lounge1Blur),
+    image:
+      'https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80',
     images: [
       caseImage(lounge1, lounge1Png, lounge1Blur),
       caseImage(lounge2, lounge2Png, lounge2Blur),
@@ -77,7 +79,8 @@ export const cases: CaseStudy[] = [
     id: 'doner-dm',
     title: 'DONER DM',
     description: 'Кафе быстрого питания, г. Караганда. Фирменный стиль и сервис 24/7.',
-    image: caseImage(kitchen1, kitchen1Png, kitchen1Blur),
+    image:
+      'https://images.unsplash.com/photo-1561758033-d89a9ad46332?auto=format&fit=crop&w=1200&q=80',
     images: [
       caseImage(kitchen1, kitchen1Png, kitchen1Blur),
       caseImage(kitchen2, kitchen2Png, kitchen2Blur),
@@ -120,7 +123,9 @@ export const cases: CaseStudy[] = [
     id: 'geely-orbis',
     title: 'Geely Astana (Orbis Auto)',
     description: 'Дилерский центр Geely в Астане — кампании, соцсети и медиа.',
-    image: '/cases/geely-monjaro.jpg',
+    image:
+      'https://images.unsplash.com/photo-1619767886558-efdc259cde1a?auto=format&fit=crop&w=1200&q=80',
+    images: ['/cases/geely-monjaro.jpg'],
     category: 'Automotive',
   },
   {
@@ -167,7 +172,9 @@ export const cases: CaseStudy[] = [
     id: 'gang-bang',
     title: 'GANG BANG',
     description: 'Бар, г. Астана — визуальный стиль и промо.',
-    image: caseImage(dance1, dance1Png, dance1Blur),
+    image:
+      'https://images.unsplash.com/photo-1566417713940-d0291177fb99?auto=format&fit=crop&w=1200&q=80',
+    images: [caseImage(dance1, dance1Png, dance1Blur)],
     category: 'HoReCa',
   },
   {
@@ -222,14 +229,18 @@ export const cases: CaseStudy[] = [
     id: 'sarah-home',
     title: 'Sarah Home',
     description: 'Салон штор — премиальный каталог и digital.',
-    image: caseImage(home1, home1Png, home1Blur),
+    image:
+      'https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=1200&q=80',
+    images: [caseImage(home1, home1Png, home1Blur)],
     category: 'Interior',
   },
   {
     id: 'volton',
     title: 'VOLTON',
     description: 'Электроника и энергетика — omnichannel и performance.',
-    image: caseImage(volt1, volt1Png, volt1Blur),
+    image:
+      'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80',
+    images: [caseImage(volt1, volt1Png, volt1Blur)],
     category: 'Electronics',
   },
   {
@@ -252,7 +263,9 @@ export const cases: CaseStudy[] = [
     id: 'demi-porselen',
     title: 'Demi Porselen',
     description: 'Посуда и фарфор — премиальный визуал и контент.',
-    image: caseImage(tableware1, tableware1Png, tableware1Blur),
+    image:
+      'https://images.unsplash.com/photo-1603199506016-b9a594b593c0?auto=format&fit=crop&w=1200&q=80',
+    images: [caseImage(tableware1, tableware1Png, tableware1Blur)],
     category: 'Lifestyle',
   },
   {
