@@ -90,7 +90,7 @@ export function OurServices() {
             <motion.a
               key={service.title}
               href="#tariffs"
-              className="glass group relative flex min-h-[104px] flex-col overflow-hidden rounded-2xl p-4 transition duration-300 hover:-translate-y-1 hover:border-primary-500/70 hover:shadow-[0_28px_90px_rgba(255,212,0,0.18)] sm:min-h-[255px] sm:rounded-[2rem] sm:p-6"
+              className="glass group relative flex min-h-[104px] flex-col overflow-hidden rounded-2xl p-4 transition duration-300 hover:-translate-y-1 hover:border-primary-500/70 hover:shadow-[0_28px_90px_rgba(255,212,0,0.18)] sm:min-h-[150px] sm:rounded-[2rem] sm:p-6"
               initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.25 }}
@@ -104,7 +104,6 @@ export function OurServices() {
               <h3 className="mt-4 text-base font-extrabold leading-tight text-white sm:mt-5 sm:text-xl">
                 {service.title}
               </h3>
-              <p className="mt-3 hidden text-sm leading-relaxed text-zinc-200/88 sm:block">{service.text}</p>
             </motion.a>
           ))}
         </div>
