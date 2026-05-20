@@ -112,18 +112,31 @@ export function CasesSection() {
             >
               Портфолио
             </motion.span>
-            <motion.a
-              href="/assets/pdf/portfolio-agency.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-fit rounded-full border border-primary-500/45 bg-primary-500 px-5 py-2.5 text-sm font-extrabold uppercase tracking-wide text-black shadow-[0_16px_45px_rgba(255,212,0,0.18)] transition hover:-translate-y-0.5 hover:bg-primary-100 hover:shadow-[0_22px_60px_rgba(255,212,0,0.24)]"
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.08, duration: 0.5 }}
-            >
-              Портфолио агентства
-            </motion.a>
+            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-end">
+              <motion.a
+                href="/assets/pdf/portfolio-agency.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-fit rounded-full border border-primary-500/45 bg-primary-500 px-5 py-2.5 text-sm font-extrabold uppercase tracking-wide text-black shadow-[0_16px_45px_rgba(255,212,0,0.18)] transition hover:-translate-y-0.5 hover:bg-primary-100 hover:shadow-[0_22px_60px_rgba(255,212,0,0.24)]"
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.08, duration: 0.5 }}
+              >
+                Портфолио агентства
+              </motion.a>
+              <motion.a
+                href="/assets/pdf/portfolio-agency.pdf"
+                download
+                className="w-fit rounded-full border border-primary-500/40 bg-black/45 px-5 py-2.5 text-sm font-extrabold uppercase tracking-wide text-primary-100 shadow-[0_16px_45px_rgba(255,212,0,0.12)] backdrop-blur-md transition hover:-translate-y-0.5 hover:border-primary-500 hover:bg-primary-500 hover:text-black hover:shadow-[0_22px_60px_rgba(255,212,0,0.2)]"
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.12, duration: 0.5 }}
+              >
+                Скачать портфолио агентства
+              </motion.a>
+            </div>
           </div>
           <motion.h2
             className="font-display text-2xl font-extrabold uppercase tracking-tight text-white sm:text-4xl lg:text-5xl"
