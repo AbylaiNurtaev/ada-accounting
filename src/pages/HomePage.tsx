@@ -6,6 +6,7 @@ import { Footer } from '../sections/Footer'
 import { Header } from '../sections/Header'
 import { Hero } from '../sections/Hero'
 import { Numbers } from '../sections/Numbers'
+import { OurServices } from '../sections/OurServices'
 import { Services } from '../sections/Services'
 
 export function HomePage() {
@@ -14,6 +15,7 @@ export function HomePage() {
       <Header />
       <main className="relative z-10">
         <Hero />
+        <OurServices />
         <Services />
         <CasesSection />
         <Benefits />

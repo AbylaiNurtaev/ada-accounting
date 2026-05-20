@@ -25,10 +25,10 @@ export function Hero() {
               С чего начать?
             </a>
             <a
-              href="#services"
+              href="#tariffs"
               className="rounded-full border border-primary-500/35 bg-black/40 px-7 py-3 text-sm font-semibold text-zinc-100 transition hover:border-primary-500 hover:text-primary-100"
             >
-              Смотреть услуги
+              Узнать стоимость
             </a>
           </div>
         </div>

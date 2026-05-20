@@ -60,7 +60,7 @@ function TariffList({ items }: { items: string[] }) {
 
 export function Services() {
   return (
-    <AnimatedSection id="services" className="py-20">
+    <AnimatedSection id="tariffs" className="py-20">
       <div className="container">
         <SectionHeading
           eyebrow="ТАРИФЫ"

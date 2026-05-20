@@ -102,15 +102,29 @@ export function CasesSection() {
 
       <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
         <div className="mb-8 flex max-w-3xl flex-col gap-3 sm:mb-12 sm:gap-4 md:mb-14">
-          <motion.span
-            className="w-fit rounded-full border border-white/10 bg-white/[0.04] px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.25em] text-white/70 backdrop-blur-md"
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.05, duration: 0.5 }}
-          >
-            Портфолио
-          </motion.span>
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <motion.span
+              className="w-fit rounded-full border border-white/10 bg-white/[0.04] px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.25em] text-white/70 backdrop-blur-md"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.05, duration: 0.5 }}
+            >
+              Портфолио
+            </motion.span>
+            <motion.a
+              href="/assets/pdf/portfolio-agency.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-fit rounded-full border border-primary-500/45 bg-primary-500 px-5 py-2.5 text-sm font-extrabold uppercase tracking-wide text-black shadow-[0_16px_45px_rgba(255,212,0,0.18)] transition hover:-translate-y-0.5 hover:bg-primary-100 hover:shadow-[0_22px_60px_rgba(255,212,0,0.24)]"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.08, duration: 0.5 }}
+            >
+              Портфолио агентства
+            </motion.a>
+          </div>
           <motion.h2
             className="font-display text-2xl font-extrabold uppercase tracking-tight text-white sm:text-4xl lg:text-5xl"
             initial={{ opacity: 0, y: 20 }}
