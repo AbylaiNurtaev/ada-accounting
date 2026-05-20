@@ -6,6 +6,7 @@ import {
 
 export const navItems = [
   { label: 'Услуги', href: '#services' },
+  { label: 'Цены', href: '#tariffs' },
   { label: 'Преимущества', href: '#benefits' },
   { label: 'FAQ', href: '#faq' },
 ]

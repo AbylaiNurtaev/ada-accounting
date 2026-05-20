@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 const sectionIds = [
   'hero',
   'services',
+  'tariffs',
   'benefits',
   'numbers',
   'faq',
