@@ -30,8 +30,8 @@ function getOptimizedImageSrc(src: string) {
   const url = new URL(src)
   url.searchParams.set('auto', 'format')
   url.searchParams.set('fit', 'crop')
-  url.searchParams.set('w', '900')
-  url.searchParams.set('q', '72')
+  url.searchParams.set('w', '1600')
+  url.searchParams.set('q', '95')
   return url.toString()
 }
 
@@ -116,13 +116,13 @@ export function CaseCard({ item, index }: CaseCardProps) {
             </span>
             <span className="mt-3 text-lg font-extrabold uppercase leading-tight text-white">{item.title}</span>
           </div>
-          <div className="relative h-full w-full origin-center overflow-hidden transition-transform duration-[650ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.08]">
+          <div className="relative h-full w-full origin-center overflow-hidden transition-transform duration-[650ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]">
             {previewImagePlaceholder && (
               <img
                 src={previewImagePlaceholder}
                 alt=""
-                className={`absolute inset-0 h-full w-full scale-105 object-cover blur-md transition-opacity duration-500 ${
-                  imageLoaded && !imageFailed ? 'opacity-0' : 'opacity-70'
+                className={`absolute inset-0 h-full w-full scale-105 object-cover blur-sm transition-opacity duration-300 ${
+                  imageLoaded && !imageFailed ? 'opacity-0' : 'opacity-30'
                 }`}
                 aria-hidden="true"
               />
@@ -133,7 +133,7 @@ export function CaseCard({ item, index }: CaseCardProps) {
                 key={previewImageSrc}
                 src={isCaseImage(previewImage) ? previewImageFallback : getOptimizedImageSrc(previewImageSrc)}
                 alt={item.title}
-                className={`h-full w-full object-cover transition-[opacity,filter] duration-700 group-hover:brightness-90 ${
+                className={`h-full w-full object-cover transition-[opacity,filter] duration-500 group-hover:brightness-95 ${
                   imageLoaded && !imageFailed ? 'opacity-100' : 'opacity-0'
                 }`}
                 loading={index < 2 ? 'eager' : 'lazy'}
@@ -208,7 +208,7 @@ export function CaseCard({ item, index }: CaseCardProps) {
               <img
                 src={detailImagePlaceholder}
                 alt=""
-                className="absolute inset-0 h-full w-full scale-105 object-cover opacity-70 blur-md"
+                className="absolute inset-0 h-full w-full scale-105 object-cover opacity-25 blur-sm"
                 aria-hidden="true"
               />
             )}

@@ -82,8 +82,10 @@ export const cases: CaseStudy[] = [
     id: 'pahlava',
     title: 'Cafe Pahlava',
     description: 'Кафе «Pahlava», г. Астана — айдентика и digital для премиального гастрономического пространства.',
-    image: caseImage(pahlavaHero, pahlavaHeroPng, pahlavaHeroBlur),
+    image:
+      'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1600&q=95',
     images: [
+      caseImage(pahlavaHero, pahlavaHeroPng, pahlavaHeroBlur),
       caseImage(pahlava1, pahlava1Png, pahlava1Blur),
       caseImage(pahlava2, pahlava2Png, pahlava2Blur),
     ],
@@ -93,8 +95,10 @@ export const cases: CaseStudy[] = [
     id: 'shishka-expo',
     title: 'ШИШКА EXPO',
     description: 'Лаундж-бар премиум-класса: атмосфера, брендинг и визуальная система.',
-    image: caseImage(loungeHero, loungeHeroPng, loungeHeroBlur),
+    image:
+      'https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1600&q=95',
     images: [
+      caseImage(loungeHero, loungeHeroPng, loungeHeroBlur),
       caseImage(lounge1, lounge1Png, lounge1Blur),
       caseImage(lounge2, lounge2Png, lounge2Blur),
     ],
@@ -257,7 +261,8 @@ export const cases: CaseStudy[] = [
     id: 'sarah-home',
     title: 'Sarah Home',
     description: 'Салон штор — премиальный каталог и digital.',
-    image: caseImage(homeBedroom, homeBedroomPng, homeBedroomBlur),
+    image:
+      'https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=1600&q=95',
     images: [
       caseImage(homeBedroom, homeBedroomPng, homeBedroomBlur),
       caseImage(homeKitchen, homeKitchenPng, homeKitchenBlur),
@@ -269,7 +274,8 @@ export const cases: CaseStudy[] = [
     id: 'volton',
     title: 'Volt On',
     description: 'Электроника и энергетика — omnichannel и performance.',
-    image: caseImage(voltHero, voltHeroPng, voltHeroBlur),
+    image:
+      'https://images.unsplash.com/photo-1498049794561-7780e7231661?auto=format&fit=crop&w=1600&q=95',
     images: [
       caseImage(voltHero, voltHeroPng, voltHeroBlur),
       caseImage(volt1, volt1Png, volt1Blur),
@@ -288,7 +294,8 @@ export const cases: CaseStudy[] = [
     id: '4tech',
     title: '4TECH',
     description: 'Магазин электроники — digital-витрина и реклама.',
-    image: caseImage(kitchenHero, kitchenHeroPng, kitchenHeroBlur),
+    image:
+      'https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=1600&q=95',
     images: [
       caseImage(kitchenHero, kitchenHeroPng, kitchenHeroBlur),
       caseImage(kitchen1, kitchen1Png, kitchen1Blur),
@@ -300,7 +307,8 @@ export const cases: CaseStudy[] = [
     id: 'demi-porselen',
     title: 'Demi Porselen',
     description: 'Посуда и фарфор — премиальный визуал и контент.',
-    image: caseImage(tablewareHero, tablewareHeroPng, tablewareHeroBlur),
+    image:
+      'https://images.unsplash.com/photo-1603199506016-b9a594b593c0?auto=format&fit=crop&w=1600&q=95',
     images: [
       caseImage(tablewareHero, tablewareHeroPng, tablewareHeroBlur),
       caseImage(tableware1, tableware1Png, tableware1Blur),
@@ -311,7 +319,9 @@ export const cases: CaseStudy[] = [
     id: 'new-year-tableware',
     title: 'New Year Tableware',
     description: 'Праздничная сервировка и предметная съёмка посуды с новогодними акцентами.',
-    image: caseImage(newYearTablewareHero, newYearTablewareHeroPng, newYearTablewareHeroBlur),
+    image:
+      'https://images.unsplash.com/photo-1482517967863-00e15c9b44be?auto=format&fit=crop&w=1600&q=95',
+    images: [caseImage(newYearTablewareHero, newYearTablewareHeroPng, newYearTablewareHeroBlur)],
     category: 'Tableware',
   },
   {
@@ -366,7 +376,9 @@ export const cases: CaseStudy[] = [
     id: 'happy-club',
     title: 'happy club',
     description: 'Магазин детских товаров — e‑commerce и контент.',
-    image: caseImage(danceKids, danceKidsPng, danceKidsBlur),
+    image:
+      'https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&fit=crop&w=1600&q=95',
+    images: [caseImage(danceKids, danceKidsPng, danceKidsBlur)],
     category: 'Kids Retail',
   },
   {
