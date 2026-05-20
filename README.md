@@ -1,4 +1,4 @@
-# ADA Accounting
+# JADI GROUP
 
 React + TypeScript + Vite landing page prepared for Vercel.
 

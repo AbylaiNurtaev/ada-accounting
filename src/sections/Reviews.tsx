@@ -6,7 +6,7 @@ export function Reviews() {
   return (
     <AnimatedSection id="reviews" className="py-20">
       <div className="container">
-        <SectionHeading eyebrow="Отзывы" title="Клиенты о работе с ADA Accounting" />
+        <SectionHeading eyebrow="Отзывы" title="Клиенты о работе с JADI GROUP" />
         <div className="mt-10 grid gap-5 lg:grid-cols-3">
           {testimonials.map((review) => (
             <article key={review.name} className="glass-soft rounded-2xl p-6">

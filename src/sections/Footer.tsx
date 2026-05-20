@@ -26,11 +26,11 @@ export function Footer() {
         <div>
           <h3 className="mb-5 text-sm font-bold uppercase tracking-wide text-white">Меню</h3>
           <ul className="space-y-2 text-sm text-zinc-200">
-            <li><a href="#hero" className="hover:text-primary-100">О нас</a></li>
-            <li><a href="#services" className="hover:text-primary-100">Услуги</a></li>
-            <li><a href="#tariffs" className="hover:text-primary-100">Тарифы</a></li>
-            <li><a href="#cases" className="hover:text-primary-100">Кейсы агентства</a></li>
-            <li><a href="#contacts" className="hover:text-primary-100">Контакты</a></li>
+            <li><a href="/#hero" className="hover:text-primary-100">О нас</a></li>
+            <li><a href="/#services" className="hover:text-primary-100">Услуги</a></li>
+            <li><a href="/#tariffs" className="hover:text-primary-100">Тарифы</a></li>
+            <li><a href="/#cases" className="hover:text-primary-100">Кейсы агентства</a></li>
+            <li><a href="/#contacts" className="hover:text-primary-100">Контакты</a></li>
           </ul>
         </div>
 

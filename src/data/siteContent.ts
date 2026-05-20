@@ -5,10 +5,10 @@ import {
 } from 'lucide-react'
 
 export const navItems = [
-  { label: 'Услуги', href: '#services' },
-  { label: 'Цены', href: '#tariffs' },
-  { label: 'Преимущества', href: '#benefits' },
-  { label: 'FAQ', href: '#faq' },
+  { label: 'Услуги', href: '/#services' },
+  { label: 'Цены', href: '/#tariffs' },
+  { label: 'Преимущества', href: '/#benefits' },
+  { label: 'FAQ', href: '/#faq' },
 ]
 
 export const aboutStats = [
@@ -52,7 +52,7 @@ export const testimonials = [
   {
     name: 'Ерлан Исламбеков',
     role: 'Партнер по аудиту Baker Tilly Qazaqstan Audit',
-    text: 'В совместных проектах команда ADA Accounting показала сильную экспертизу и гибкий подход к решению технических задач финансовой отчетности.',
+    text: 'В совместных проектах команда JADI GROUP показала сильную экспертизу и гибкий подход к решению технических задач.',
   },
   {
     name: 'Фурсаев А.А.',

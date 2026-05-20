@@ -9,7 +9,7 @@ export function About() {
         <SectionHeading
           eyebrow="О нас"
           title="Экспертиза, которой доверяют более 220 компаний"
-          description="ADA Accounting объединяет команду практиков в области бухгалтерии, налогов и МСФО. Мы выстраиваем процессы так, чтобы учет работал как система."
+          description="JADI GROUP объединяет команду практиков в маркетинге, аналитике и digital-продвижении. Мы выстраиваем процессы так, чтобы рост бизнеса работал как система."
         />
         <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {aboutStats.map((item) => (

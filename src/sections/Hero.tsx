@@ -19,13 +19,13 @@ export function Hero() {
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <a
-              href="#services"
+              href="/#services"
               className="rounded-full border border-primary-500 bg-primary-500 px-7 py-3 text-sm font-semibold text-black transition hover:-translate-y-0.5 hover:bg-primary-100"
             >
               Наши услуги
             </a>
             <a
-              href="#tariffs"
+              href="/#tariffs"
               className="rounded-full border border-primary-500/35 bg-black/40 px-7 py-3 text-sm font-semibold text-zinc-100 transition hover:border-primary-500 hover:text-primary-100"
             >
               Узнать стоимость
