@@ -10,8 +10,10 @@ import {
   MousePointerClick,
   PenTool,
   Share2,
+  X,
 } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { useState } from 'react'
 import { AnimatedSection } from '../components/AnimatedSection'
 
 const services = [
@@ -73,6 +75,8 @@ const services = [
 ]
 
 export function OurServices() {
+  const [selectedService, setSelectedService] = useState<(typeof services)[number] | null>(null)
+
   return (
     <AnimatedSection id="services" className="py-20">
       <div className="container">
@@ -87,15 +91,16 @@ export function OurServices() {
 
         <div className="mt-8 grid items-stretch gap-3 sm:mt-12 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
           {services.map((service, index) => (
-            <motion.a
+            <motion.button
+              type="button"
               key={service.title}
-              href="#tariffs"
-              className="glass group relative flex min-h-[104px] flex-col overflow-hidden rounded-2xl p-4 transition duration-300 hover:-translate-y-1 hover:border-primary-500/70 hover:shadow-[0_28px_90px_rgba(255,212,0,0.18)] sm:min-h-[150px] sm:rounded-[2rem] sm:p-6"
+              onClick={() => setSelectedService(service)}
+              className="glass group relative flex min-h-[104px] cursor-pointer flex-col overflow-hidden rounded-2xl p-4 text-left transition duration-300 hover:-translate-y-1 hover:border-primary-500/70 hover:shadow-[0_28px_90px_rgba(255,212,0,0.18)] sm:min-h-[150px] sm:rounded-[2rem] sm:p-6"
               initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.25 }}
               transition={{ duration: 0.55, ease: 'easeOut', delay: Math.min(index * 0.04, 0.28) }}
-              aria-label={`${service.title}: перейти к ценам`}
+              aria-label={`${service.title}: открыть описание услуги`}
             >
               <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-primary-500/80 to-transparent" />
               <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-primary-500/35 bg-primary-500/10 text-primary-500 shadow-[0_16px_42px_rgba(255,212,0,0.12)] transition duration-300 group-hover:bg-primary-500 group-hover:text-black sm:h-12 sm:w-12 sm:rounded-2xl">
@@ -104,10 +109,44 @@ export function OurServices() {
               <h3 className="mt-4 text-base font-extrabold leading-tight text-white sm:mt-5 sm:text-xl">
                 {service.title}
               </h3>
-            </motion.a>
+            </motion.button>
           ))}
         </div>
       </div>
+
+      {selectedService && (
+        <div className="fixed inset-0 z-[70] flex items-center justify-center bg-black/75 px-4 py-6 backdrop-blur-md">
+          <motion.div
+            className="glass relative w-full max-w-lg overflow-hidden rounded-[2rem] p-6 shadow-[0_28px_90px_rgba(255,212,0,0.18)] sm:p-8"
+            initial={{ opacity: 0, y: 24, scale: 0.96 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.28, ease: 'easeOut' }}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="service-dialog-title"
+          >
+            <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-primary-500/80 to-transparent" />
+            <button
+              type="button"
+              onClick={() => setSelectedService(null)}
+              className="absolute right-4 top-4 rounded-full border border-primary-500/30 bg-black/45 p-2 text-primary-100 transition hover:border-primary-500 hover:text-primary-500"
+              aria-label="Закрыть описание услуги"
+            >
+              <X className="h-5 w-5" />
+            </button>
+
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-primary-500/35 bg-primary-500/10 text-primary-500 shadow-[0_16px_42px_rgba(255,212,0,0.12)]">
+              <selectedService.icon className="h-6 w-6" strokeWidth={1.8} />
+            </div>
+            <h3 id="service-dialog-title" className="mt-5 pr-10 text-2xl font-extrabold leading-tight text-white">
+              {selectedService.title}
+            </h3>
+            <p className="mt-4 text-sm leading-relaxed text-zinc-200/90 sm:text-base">
+              {selectedService.text}
+            </p>
+          </motion.div>
+        </div>
+      )}
     </AnimatedSection>
   )
 }
