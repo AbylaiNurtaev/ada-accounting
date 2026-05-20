@@ -85,12 +85,12 @@ export function OurServices() {
           </p>
         </div>
 
-        <div className="mt-12 grid items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid items-stretch gap-3 sm:mt-12 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
           {services.map((service, index) => (
             <motion.a
               key={service.title}
               href="#tariffs"
-              className="glass group relative flex min-h-[255px] flex-col overflow-hidden rounded-[2rem] p-5 transition duration-300 hover:-translate-y-1 hover:border-primary-500/70 hover:shadow-[0_28px_90px_rgba(255,212,0,0.18)] sm:p-6"
+              className="glass group relative flex min-h-[104px] flex-col overflow-hidden rounded-2xl p-4 transition duration-300 hover:-translate-y-1 hover:border-primary-500/70 hover:shadow-[0_28px_90px_rgba(255,212,0,0.18)] sm:min-h-[255px] sm:rounded-[2rem] sm:p-6"
               initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.25 }}
@@ -98,22 +98,15 @@ export function OurServices() {
               aria-label={`${service.title}: перейти к ценам`}
             >
               <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-primary-500/80 to-transparent" />
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-primary-500/35 bg-primary-500/10 text-primary-500 shadow-[0_16px_42px_rgba(255,212,0,0.12)] transition duration-300 group-hover:bg-primary-500 group-hover:text-black">
-                <service.icon size={24} strokeWidth={1.8} />
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-primary-500/35 bg-primary-500/10 text-primary-500 shadow-[0_16px_42px_rgba(255,212,0,0.12)] transition duration-300 group-hover:bg-primary-500 group-hover:text-black sm:h-12 sm:w-12 sm:rounded-2xl">
+                <service.icon className="h-4.5 w-4.5 sm:h-6 sm:w-6" strokeWidth={1.8} />
               </div>
-              <h3 className="mt-5 text-lg font-extrabold leading-tight text-white sm:text-xl">{service.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-zinc-200/88">{service.text}</p>
+              <h3 className="mt-4 text-base font-extrabold leading-tight text-white sm:mt-5 sm:text-xl">
+                {service.title}
+              </h3>
+              <p className="mt-3 hidden text-sm leading-relaxed text-zinc-200/88 sm:block">{service.text}</p>
             </motion.a>
           ))}
-        </div>
-
-        <div className="mt-9 flex justify-center">
-          <a
-            href="#tariffs"
-            className="rounded-full border border-primary-500 bg-primary-500 px-8 py-3 text-sm font-extrabold uppercase tracking-wide text-black shadow-[0_16px_45px_rgba(255,212,0,0.18)] transition hover:-translate-y-0.5 hover:bg-primary-100"
-          >
-            ЦЕНЫ
-          </a>
         </div>
       </div>
     </AnimatedSection>
