@@ -13,7 +13,6 @@ import {
 } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { AnimatedSection } from '../components/AnimatedSection'
-import { SectionHeading } from '../components/SectionHeading'
 
 const services = [
   {
@@ -77,12 +76,14 @@ export function OurServices() {
   return (
     <AnimatedSection id="services" className="py-20">
       <div className="container">
-        <SectionHeading
-          eyebrow="Услуги"
-          title="НАШИ УСЛУГИ"
-          description="Комплексные маркетинговые решения для роста бизнеса, привлечения клиентов и увеличения продаж."
-          centered
-        />
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="glass-soft mb-3 inline-flex rounded-full px-4 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-primary-100">
+            Услуги
+          </p>
+          <p className="mt-4 text-base text-zinc-200/90 md:text-lg">
+            Комплексные маркетинговые решения для роста бизнеса, привлечения клиентов и увеличения продаж.
+          </p>
+        </div>
 
         <div className="mt-12 grid items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
