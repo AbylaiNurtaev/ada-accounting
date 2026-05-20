@@ -15,7 +15,7 @@ export function Hero() {
           </h1>
           <p className="mt-6 max-w-xl text-base text-zinc-200/90 md:text-lg">
             Современное маркетинговое агентство для бизнеса: таргетированная реклама, SEO, контент,
-            аналитика и рост продаж в одном окне.
+            аналитика и рост продаж в одной команде.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <a
