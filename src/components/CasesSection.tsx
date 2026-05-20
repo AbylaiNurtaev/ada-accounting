@@ -62,17 +62,19 @@ export function CasesSection() {
 
   useEffect(() => {
     const preloadedImages = cases.slice(0, 2).map((item) => {
+      const src = typeof item.image === 'string' ? item.image : item.image.src
       const image = new Image()
       image.decoding = 'async'
-      image.src = item.image
+      image.src = src
       return image
     })
 
     const preloadLinks = cases.slice(0, 2).map((item) => {
+      const src = typeof item.image === 'string' ? item.image : item.image.src
       const link = document.createElement('link')
       link.rel = 'preload'
       link.as = 'image'
-      link.href = item.image
+      link.href = src
       document.head.appendChild(link)
       return link
     })

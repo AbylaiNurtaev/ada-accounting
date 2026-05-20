@@ -1,36 +1,87 @@
+import dance1Blur from '../assets/cases/dance/dance-1-blur.webp'
+import dance1Png from '../assets/cases/dance/dance-1.png'
+import dance1 from '../assets/cases/dance/dance-1.webp'
+import home1Blur from '../assets/cases/home/home-1-blur.webp'
+import home1Png from '../assets/cases/home/home-1.png'
+import home1 from '../assets/cases/home/home-1.webp'
+import kitchen1Blur from '../assets/cases/kitchen/kitchen-1-blur.webp'
+import kitchen1Png from '../assets/cases/kitchen/kitchen-1.png'
+import kitchen1 from '../assets/cases/kitchen/kitchen-1.webp'
+import kitchen2Blur from '../assets/cases/kitchen/kitchen-2-blur.webp'
+import kitchen2Png from '../assets/cases/kitchen/kitchen-2.png'
+import kitchen2 from '../assets/cases/kitchen/kitchen-2.webp'
+import lounge1Blur from '../assets/cases/lounge/lounge-1-blur.webp'
+import lounge1Png from '../assets/cases/lounge/lounge-1.png'
+import lounge1 from '../assets/cases/lounge/lounge-1.webp'
+import lounge2Blur from '../assets/cases/lounge/lounge-2-blur.webp'
+import lounge2Png from '../assets/cases/lounge/lounge-2.png'
+import lounge2 from '../assets/cases/lounge/lounge-2.webp'
+import pahlava1Blur from '../assets/cases/pahlava/pahlava-1-blur.webp'
+import pahlava1Png from '../assets/cases/pahlava/pahlava-1.png'
+import pahlava1 from '../assets/cases/pahlava/pahlava-1.webp'
+import pahlava2Blur from '../assets/cases/pahlava/pahlava-2-blur.webp'
+import pahlava2Png from '../assets/cases/pahlava/pahlava-2.png'
+import pahlava2 from '../assets/cases/pahlava/pahlava-2.webp'
+import tableware1Blur from '../assets/cases/tableware/tableware-1-blur.webp'
+import tableware1Png from '../assets/cases/tableware/tableware-1.png'
+import tableware1 from '../assets/cases/tableware/tableware-1.webp'
+import volt1Blur from '../assets/cases/volt/volt-1-blur.webp'
+import volt1Png from '../assets/cases/volt/volt-1.png'
+import volt1 from '../assets/cases/volt/volt-1.webp'
+
+export type CaseImage = {
+  src: string
+  fallback: string
+  placeholder: string
+}
+
 export type CaseStudy = {
   id: string
   title: string
   description: string
-  image: string
-  images?: string[]
+  image: string | CaseImage
+  images?: Array<string | CaseImage>
   category: string
 }
 
-/** Превью: при необходимости замените URL на файлы из `/public/cases/`. */
+const caseImage = (src: string, fallback: string, placeholder: string): CaseImage => ({
+  src,
+  fallback,
+  placeholder,
+})
+
 export const cases: CaseStudy[] = [
   {
     id: 'pahlava',
     title: 'Cafe Pahlava',
     description: 'Кафе «Pahlava», г. Астана — айдентика и digital для премиального гастрономического пространства.',
-    image:
-      'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80',
+    image: caseImage(pahlava1, pahlava1Png, pahlava1Blur),
+    images: [
+      caseImage(pahlava1, pahlava1Png, pahlava1Blur),
+      caseImage(pahlava2, pahlava2Png, pahlava2Blur),
+    ],
     category: 'Food & Beverage',
   },
   {
     id: 'shishka-expo',
     title: 'ШИШКА EXPO',
     description: 'Лаундж-бар премиум-класса: атмосфера, брендинг и визуальная система.',
-    image:
-      'https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80',
+    image: caseImage(lounge1, lounge1Png, lounge1Blur),
+    images: [
+      caseImage(lounge1, lounge1Png, lounge1Blur),
+      caseImage(lounge2, lounge2Png, lounge2Blur),
+    ],
     category: 'Lounge Bar',
   },
   {
     id: 'doner-dm',
     title: 'DONER DM',
     description: 'Кафе быстрого питания, г. Караганда. Фирменный стиль и сервис 24/7.',
-    image:
-      'https://images.unsplash.com/photo-1561758033-d89a9ad46332?auto=format&fit=crop&w=1200&q=80',
+    image: caseImage(kitchen1, kitchen1Png, kitchen1Blur),
+    images: [
+      caseImage(kitchen1, kitchen1Png, kitchen1Blur),
+      caseImage(kitchen2, kitchen2Png, kitchen2Blur),
+    ],
     category: 'Fast Food',
   },
   {
@@ -116,8 +167,7 @@ export const cases: CaseStudy[] = [
     id: 'gang-bang',
     title: 'GANG BANG',
     description: 'Бар, г. Астана — визуальный стиль и промо.',
-    image:
-      'https://images.unsplash.com/photo-1566417713940-d0291177fb99?auto=format&fit=crop&w=1200&q=80',
+    image: caseImage(dance1, dance1Png, dance1Blur),
     category: 'HoReCa',
   },
   {
@@ -172,16 +222,14 @@ export const cases: CaseStudy[] = [
     id: 'sarah-home',
     title: 'Sarah Home',
     description: 'Салон штор — премиальный каталог и digital.',
-    image:
-      'https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=1200&q=80',
+    image: caseImage(home1, home1Png, home1Blur),
     category: 'Interior',
   },
   {
     id: 'volton',
     title: 'VOLTON',
     description: 'Электроника и энергетика — omnichannel и performance.',
-    image:
-      'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80',
+    image: caseImage(volt1, volt1Png, volt1Blur),
     category: 'Electronics',
   },
   {
@@ -204,8 +252,7 @@ export const cases: CaseStudy[] = [
     id: 'demi-porselen',
     title: 'Demi Porselen',
     description: 'Посуда и фарфор — премиальный визуал и контент.',
-    image:
-      'https://images.unsplash.com/photo-1603199506016-b9a594b593c0?auto=format&fit=crop&w=1200&q=80',
+    image: caseImage(tableware1, tableware1Png, tableware1Blur),
     category: 'Lifestyle',
   },
   {

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useEffect, useMemo, useState } from 'react'
-import type { CaseStudy } from '../data/cases'
+import type { CaseImage, CaseStudy } from '../data/cases'
 
 const INSTAGRAM_URL = 'https://www.instagram.com/jadi_group/'
 const MARQUEE_CHUNK =
@@ -29,6 +29,22 @@ type CaseCardProps = {
   index: number
 }
 
+function isCaseImage(image: string | CaseImage): image is CaseImage {
+  return typeof image !== 'string'
+}
+
+function getImageSrc(image: string | CaseImage) {
+  return isCaseImage(image) ? image.src : image
+}
+
+function getImageFallback(image: string | CaseImage) {
+  return isCaseImage(image) ? image.fallback : image
+}
+
+function getImagePlaceholder(image: string | CaseImage) {
+  return isCaseImage(image) ? image.placeholder : undefined
+}
+
 function getOptimizedImageSrc(src: string) {
   if (!src.includes('images.unsplash.com')) return src
 
@@ -46,14 +62,17 @@ export function CaseCard({ item, index }: CaseCardProps) {
   const [loadedImageSrc, setLoadedImageSrc] = useState('')
   const [failedImageSrc, setFailedImageSrc] = useState('')
   const activeImage = galleryImages[activeImageIndex] ?? item.image
-  const imageLoaded = loadedImageSrc === activeImage
-  const imageFailed = failedImageSrc === activeImage
+  const activeImageSrc = getImageSrc(activeImage)
+  const activeImageFallback = getImageFallback(activeImage)
+  const activeImagePlaceholder = getImagePlaceholder(activeImage)
+  const imageLoaded = loadedImageSrc === activeImageSrc
+  const imageFailed = failedImageSrc === activeImageSrc
 
   useEffect(() => {
-    galleryImages.slice(0, 1).forEach((src) => {
+    galleryImages.slice(0, 1).forEach((imageSrc) => {
       const image = new Image()
       image.decoding = 'async'
-      image.src = getOptimizedImageSrc(src)
+      image.src = getOptimizedImageSrc(getImageSrc(imageSrc))
     })
   }, [galleryImages])
 
@@ -95,26 +114,42 @@ export function CaseCard({ item, index }: CaseCardProps) {
             </span>
             <span className="mt-3 text-lg font-extrabold uppercase leading-tight text-white">{item.title}</span>
           </div>
-          <div className="h-full w-full origin-center transition-transform duration-[650ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.08]">
-            <img
-              key={activeImage}
-              src={getOptimizedImageSrc(activeImage)}
-              alt={item.title}
-              className={`h-full w-full object-cover transition-[opacity,filter] duration-700 group-hover:brightness-90 ${
-                imageLoaded && !imageFailed ? 'opacity-100' : 'opacity-0'
-              }`}
-              loading={index < 2 ? 'eager' : 'lazy'}
-              decoding="async"
-              fetchPriority={index < 2 ? 'high' : 'auto'}
-              onLoad={() => {
-                setLoadedImageSrc(activeImage)
-                setFailedImageSrc('')
-              }}
-              onError={(event) => {
-                setFailedImageSrc(activeImage)
-                event.currentTarget.style.display = 'none'
-              }}
-            />
+          <div className="relative h-full w-full origin-center overflow-hidden transition-transform duration-[650ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.08]">
+            {activeImagePlaceholder && (
+              <img
+                src={activeImagePlaceholder}
+                alt=""
+                className={`absolute inset-0 h-full w-full scale-105 object-cover blur-md transition-opacity duration-500 ${
+                  imageLoaded && !imageFailed ? 'opacity-0' : 'opacity-70'
+                }`}
+                aria-hidden="true"
+              />
+            )}
+            <picture>
+              {isCaseImage(activeImage) && <source srcSet={activeImageSrc} type="image/webp" />}
+              <img
+                key={activeImageSrc}
+                src={isCaseImage(activeImage) ? activeImageFallback : getOptimizedImageSrc(activeImageSrc)}
+                alt={item.title}
+                className={`h-full w-full object-cover transition-[opacity,filter] duration-700 group-hover:brightness-90 ${
+                  imageLoaded && !imageFailed ? 'opacity-100' : 'opacity-0'
+                }`}
+                loading={index < 2 ? 'eager' : 'lazy'}
+                decoding="async"
+                fetchPriority={index < 2 ? 'high' : 'auto'}
+                sizes="(min-width: 1024px) 400px, (min-width: 640px) 360px, 42vw"
+                width={1400}
+                height={788}
+                onLoad={() => {
+                  setLoadedImageSrc(activeImageSrc)
+                  setFailedImageSrc('')
+                }}
+                onError={(event) => {
+                  setFailedImageSrc(activeImageSrc)
+                  event.currentTarget.style.display = 'none'
+                }}
+              />
+            </picture>
           </div>
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black via-black/35 to-transparent" />
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/90 to-transparent" />
@@ -128,7 +163,7 @@ export function CaseCard({ item, index }: CaseCardProps) {
               {galleryImages.map((src, imageIndex) => (
                 <button
                   type="button"
-                  key={src}
+                  key={getImageSrc(src)}
                   aria-label={`${item.title} image ${imageIndex + 1}`}
                   onClick={(event) => {
                     event.preventDefault()
