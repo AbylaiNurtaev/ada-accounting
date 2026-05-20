@@ -2,19 +2,19 @@ import dance1Blur from '../assets/cases/dance/dance-1-blur.webp'
 import dance1Png from '../assets/cases/dance/dance-1.png'
 import dance1 from '../assets/cases/dance/dance-1.webp'
 import danceKidsBlur from '../assets/cases/dance/dance-kids-blur.webp'
-import danceKidsPng from '../assets/cases/dance/dance-kids.png'
+import danceKidsJpg from '../assets/cases/dance/dance-kids.jpg'
 import danceKids from '../assets/cases/dance/dance-kids.webp'
 import homeBedroomBlur from '../assets/cases/home/home-bedroom-blur.webp'
-import homeBedroomPng from '../assets/cases/home/home-bedroom.png'
+import homeBedroomJpg from '../assets/cases/home/home-bedroom.jpg'
 import homeBedroom from '../assets/cases/home/home-bedroom.webp'
 import homeKitchenBlur from '../assets/cases/home/home-kitchen-blur.webp'
-import homeKitchenPng from '../assets/cases/home/home-kitchen.png'
+import homeKitchenJpg from '../assets/cases/home/home-kitchen.jpg'
 import homeKitchen from '../assets/cases/home/home-kitchen.webp'
 import home1Blur from '../assets/cases/home/home-1-blur.webp'
 import home1Png from '../assets/cases/home/home-1.png'
 import home1 from '../assets/cases/home/home-1.webp'
 import kitchenHeroBlur from '../assets/cases/kitchen/kitchen-hero-blur.webp'
-import kitchenHeroPng from '../assets/cases/kitchen/kitchen-hero.png'
+import kitchenHeroJpg from '../assets/cases/kitchen/kitchen-hero.jpg'
 import kitchenHero from '../assets/cases/kitchen/kitchen-hero.webp'
 import kitchen1Blur from '../assets/cases/kitchen/kitchen-1-blur.webp'
 import kitchen1Png from '../assets/cases/kitchen/kitchen-1.png'
@@ -23,7 +23,7 @@ import kitchen2Blur from '../assets/cases/kitchen/kitchen-2-blur.webp'
 import kitchen2Png from '../assets/cases/kitchen/kitchen-2.png'
 import kitchen2 from '../assets/cases/kitchen/kitchen-2.webp'
 import loungeHeroBlur from '../assets/cases/lounge/lounge-hero-blur.webp'
-import loungeHeroPng from '../assets/cases/lounge/lounge-hero.png'
+import loungeHeroJpg from '../assets/cases/lounge/lounge-hero.jpg'
 import loungeHero from '../assets/cases/lounge/lounge-hero.webp'
 import lounge1Blur from '../assets/cases/lounge/lounge-1-blur.webp'
 import lounge1Png from '../assets/cases/lounge/lounge-1.png'
@@ -32,10 +32,10 @@ import lounge2Blur from '../assets/cases/lounge/lounge-2-blur.webp'
 import lounge2Png from '../assets/cases/lounge/lounge-2.png'
 import lounge2 from '../assets/cases/lounge/lounge-2.webp'
 import newYearTablewareHeroBlur from '../assets/cases/new-year-tableware/new-year-tableware-hero-blur.webp'
-import newYearTablewareHeroPng from '../assets/cases/new-year-tableware/new-year-tableware-hero.png'
+import newYearTablewareHeroJpg from '../assets/cases/new-year-tableware/new-year-tableware-hero.jpg'
 import newYearTablewareHero from '../assets/cases/new-year-tableware/new-year-tableware-hero.webp'
 import pahlavaHeroBlur from '../assets/cases/pahlava/pahlava-hero-blur.webp'
-import pahlavaHeroPng from '../assets/cases/pahlava/pahlava-hero.png'
+import pahlavaHeroJpg from '../assets/cases/pahlava/pahlava-hero.jpg'
 import pahlavaHero from '../assets/cases/pahlava/pahlava-hero.webp'
 import pahlava1Blur from '../assets/cases/pahlava/pahlava-1-blur.webp'
 import pahlava1Png from '../assets/cases/pahlava/pahlava-1.png'
@@ -44,13 +44,13 @@ import pahlava2Blur from '../assets/cases/pahlava/pahlava-2-blur.webp'
 import pahlava2Png from '../assets/cases/pahlava/pahlava-2.png'
 import pahlava2 from '../assets/cases/pahlava/pahlava-2.webp'
 import tablewareHeroBlur from '../assets/cases/tableware/tableware-hero-blur.webp'
-import tablewareHeroPng from '../assets/cases/tableware/tableware-hero.png'
+import tablewareHeroJpg from '../assets/cases/tableware/tableware-hero.jpg'
 import tablewareHero from '../assets/cases/tableware/tableware-hero.webp'
 import tableware1Blur from '../assets/cases/tableware/tableware-1-blur.webp'
 import tableware1Png from '../assets/cases/tableware/tableware-1.png'
 import tableware1 from '../assets/cases/tableware/tableware-1.webp'
 import voltHeroBlur from '../assets/cases/volt/volt-hero-blur.webp'
-import voltHeroPng from '../assets/cases/volt/volt-hero.png'
+import voltHeroJpg from '../assets/cases/volt/volt-hero.jpg'
 import voltHero from '../assets/cases/volt/volt-hero.webp'
 import volt1Blur from '../assets/cases/volt/volt-1-blur.webp'
 import volt1Png from '../assets/cases/volt/volt-1.png'
@@ -82,9 +82,9 @@ export const cases: CaseStudy[] = [
     id: 'pahlava',
     title: 'Cafe Pahlava',
     description: 'Кафе «Pahlava», г. Астана — айдентика и digital для премиального гастрономического пространства.',
-    image: caseImage(pahlavaHero, pahlavaHeroPng, pahlavaHeroBlur),
+    image: caseImage(pahlavaHero, pahlavaHeroJpg, pahlavaHeroBlur),
     images: [
-      caseImage(pahlavaHero, pahlavaHeroPng, pahlavaHeroBlur),
+      caseImage(pahlavaHero, pahlavaHeroJpg, pahlavaHeroBlur),
       caseImage(pahlava1, pahlava1Png, pahlava1Blur),
       caseImage(pahlava2, pahlava2Png, pahlava2Blur),
     ],
@@ -94,9 +94,9 @@ export const cases: CaseStudy[] = [
     id: 'shishka-expo',
     title: 'ШИШКА EXPO',
     description: 'Лаундж-бар премиум-класса: атмосфера, брендинг и визуальная система.',
-    image: caseImage(loungeHero, loungeHeroPng, loungeHeroBlur),
+    image: caseImage(loungeHero, loungeHeroJpg, loungeHeroBlur),
     images: [
-      caseImage(loungeHero, loungeHeroPng, loungeHeroBlur),
+      caseImage(loungeHero, loungeHeroJpg, loungeHeroBlur),
       caseImage(lounge1, lounge1Png, lounge1Blur),
       caseImage(lounge2, lounge2Png, lounge2Blur),
     ],
@@ -202,7 +202,7 @@ export const cases: CaseStudy[] = [
     image:
       'https://images.unsplash.com/photo-1566417713940-d0291177fb99?auto=format&fit=crop&w=1200&q=80',
     images: [
-      caseImage(danceKids, danceKidsPng, danceKidsBlur),
+      caseImage(danceKids, danceKidsJpg, danceKidsBlur),
       caseImage(dance1, dance1Png, dance1Blur),
     ],
     category: 'HoReCa',
@@ -259,10 +259,10 @@ export const cases: CaseStudy[] = [
     id: 'sarah-home',
     title: 'Sarah Home',
     description: 'Салон штор — премиальный каталог и digital.',
-    image: caseImage(homeBedroom, homeBedroomPng, homeBedroomBlur),
+    image: caseImage(homeBedroom, homeBedroomJpg, homeBedroomBlur),
     images: [
-      caseImage(homeBedroom, homeBedroomPng, homeBedroomBlur),
-      caseImage(homeKitchen, homeKitchenPng, homeKitchenBlur),
+      caseImage(homeBedroom, homeBedroomJpg, homeBedroomBlur),
+      caseImage(homeKitchen, homeKitchenJpg, homeKitchenBlur),
       caseImage(home1, home1Png, home1Blur),
     ],
     category: 'Interior',
@@ -271,9 +271,9 @@ export const cases: CaseStudy[] = [
     id: 'volton',
     title: 'Volt On',
     description: 'Электроника и энергетика — omnichannel и performance.',
-    image: caseImage(voltHero, voltHeroPng, voltHeroBlur),
+    image: caseImage(voltHero, voltHeroJpg, voltHeroBlur),
     images: [
-      caseImage(voltHero, voltHeroPng, voltHeroBlur),
+      caseImage(voltHero, voltHeroJpg, voltHeroBlur),
       caseImage(volt1, volt1Png, volt1Blur),
     ],
     category: 'Electronics',
@@ -290,9 +290,9 @@ export const cases: CaseStudy[] = [
     id: '4tech',
     title: '4TECH',
     description: 'Магазин электроники — digital-витрина и реклама.',
-    image: caseImage(kitchenHero, kitchenHeroPng, kitchenHeroBlur),
+    image: caseImage(kitchenHero, kitchenHeroJpg, kitchenHeroBlur),
     images: [
-      caseImage(kitchenHero, kitchenHeroPng, kitchenHeroBlur),
+      caseImage(kitchenHero, kitchenHeroJpg, kitchenHeroBlur),
       caseImage(kitchen1, kitchen1Png, kitchen1Blur),
       caseImage(kitchen2, kitchen2Png, kitchen2Blur),
     ],
@@ -302,9 +302,9 @@ export const cases: CaseStudy[] = [
     id: 'demi-porselen',
     title: 'Demi Porselen',
     description: 'Посуда и фарфор — премиальный визуал и контент.',
-    image: caseImage(tablewareHero, tablewareHeroPng, tablewareHeroBlur),
+    image: caseImage(tablewareHero, tablewareHeroJpg, tablewareHeroBlur),
     images: [
-      caseImage(tablewareHero, tablewareHeroPng, tablewareHeroBlur),
+      caseImage(tablewareHero, tablewareHeroJpg, tablewareHeroBlur),
       caseImage(tableware1, tableware1Png, tableware1Blur),
     ],
     category: 'Lifestyle',
@@ -313,8 +313,8 @@ export const cases: CaseStudy[] = [
     id: 'new-year-tableware',
     title: 'New Year Tableware',
     description: 'Праздничная сервировка и предметная съёмка посуды с новогодними акцентами.',
-    image: caseImage(newYearTablewareHero, newYearTablewareHeroPng, newYearTablewareHeroBlur),
-    images: [caseImage(newYearTablewareHero, newYearTablewareHeroPng, newYearTablewareHeroBlur)],
+    image: caseImage(newYearTablewareHero, newYearTablewareHeroJpg, newYearTablewareHeroBlur),
+    images: [caseImage(newYearTablewareHero, newYearTablewareHeroJpg, newYearTablewareHeroBlur)],
     category: 'Tableware',
   },
   {
@@ -369,8 +369,8 @@ export const cases: CaseStudy[] = [
     id: 'happy-club',
     title: 'happy club',
     description: 'Магазин детских товаров — e‑commerce и контент.',
-    image: caseImage(danceKids, danceKidsPng, danceKidsBlur),
-    images: [caseImage(danceKids, danceKidsPng, danceKidsBlur)],
+    image: caseImage(danceKids, danceKidsJpg, danceKidsBlur),
+    images: [caseImage(danceKids, danceKidsJpg, danceKidsBlur)],
     category: 'Kids Retail',
   },
   {

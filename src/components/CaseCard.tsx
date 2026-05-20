@@ -20,10 +20,6 @@ function getImageFallback(image: string | CaseImage) {
   return isCaseImage(image) ? image.fallback : image
 }
 
-function getImagePlaceholder(image: string | CaseImage) {
-  return isCaseImage(image) ? image.placeholder : undefined
-}
-
 function getOptimizedImageSrc(src: string) {
   if (!src.includes('images.unsplash.com')) return src
 
@@ -39,7 +35,6 @@ export function CaseCard({ item, index }: CaseCardProps) {
   const detailImages = useMemo(() => item.images?.length ? item.images : [item.image], [item.image, item.images])
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [activeImageIndex, setActiveImageIndex] = useState(0)
-  const [loadedImageSrc, setLoadedImageSrc] = useState('')
   const [failedImageSrc, setFailedImageSrc] = useState('')
   const previewImage = item.image
   const previewImageSrc = getImageSrc(previewImage)
@@ -47,8 +42,6 @@ export function CaseCard({ item, index }: CaseCardProps) {
   const detailImage = detailImages[activeImageIndex] ?? item.image
   const detailImageSrc = getImageSrc(detailImage)
   const detailImageFallback = getImageFallback(detailImage)
-  const detailImagePlaceholder = getImagePlaceholder(detailImage)
-  const imageLoaded = loadedImageSrc === previewImageSrc
   const imageFailed = failedImageSrc === previewImageSrc
 
   useEffect(() => {
@@ -107,7 +100,7 @@ export function CaseCard({ item, index }: CaseCardProps) {
         <div className="relative h-[150px] shrink-0 overflow-hidden sm:h-[320px] md:h-[340px]">
           <div
             className={`absolute inset-0 flex flex-col justify-end bg-[radial-gradient(circle_at_30%_20%,rgba(255,212,0,0.28),transparent_34%),linear-gradient(135deg,#171717,#050505_60%,#241f05)] p-4 transition-opacity duration-500 ${
-              imageLoaded && !imageFailed ? 'opacity-0' : 'opacity-100'
+              imageFailed ? 'opacity-100' : 'opacity-0'
             }`}
           >
             <span className="w-fit rounded-full border border-primary-500/35 bg-black/50 px-2 py-0.5 text-[7px] font-semibold uppercase tracking-widest text-primary-100">
@@ -122,9 +115,7 @@ export function CaseCard({ item, index }: CaseCardProps) {
                 key={previewImageSrc}
                 src={isCaseImage(previewImage) ? previewImageFallback : getOptimizedImageSrc(previewImageSrc)}
                 alt={item.title}
-                className={`h-full w-full object-cover transition-[opacity,filter] duration-300 group-hover:brightness-95 ${
-                  imageLoaded && !imageFailed ? 'opacity-100' : 'opacity-0'
-                }`}
+                className="h-full w-full object-cover transition-[opacity,filter] duration-300 group-hover:brightness-95"
                 loading={index < 2 ? 'eager' : 'lazy'}
                 decoding="async"
                 fetchPriority={index < 2 ? 'high' : 'auto'}
@@ -132,7 +123,6 @@ export function CaseCard({ item, index }: CaseCardProps) {
                 width={1400}
                 height={788}
                 onLoad={() => {
-                  setLoadedImageSrc(previewImageSrc)
                   setFailedImageSrc('')
                 }}
                 onError={(event) => {
@@ -193,14 +183,6 @@ export function CaseCard({ item, index }: CaseCardProps) {
           </button>
 
           <div className="relative aspect-[16/9] w-full overflow-hidden bg-zinc-950">
-            {detailImagePlaceholder && (
-              <img
-                src={detailImagePlaceholder}
-                alt=""
-                className="absolute inset-0 h-full w-full scale-105 object-cover opacity-25 blur-sm"
-                aria-hidden="true"
-              />
-            )}
             <picture>
               {isCaseImage(detailImage) && <source srcSet={detailImageSrc} type="image/webp" />}
               <img
