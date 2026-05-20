@@ -1,30 +1,57 @@
 import dance1Blur from '../assets/cases/dance/dance-1-blur.webp'
 import dance1Png from '../assets/cases/dance/dance-1.png'
 import dance1 from '../assets/cases/dance/dance-1.webp'
+import danceKidsBlur from '../assets/cases/dance/dance-kids-blur.webp'
+import danceKidsPng from '../assets/cases/dance/dance-kids.png'
+import danceKids from '../assets/cases/dance/dance-kids.webp'
+import homeBedroomBlur from '../assets/cases/home/home-bedroom-blur.webp'
+import homeBedroomPng from '../assets/cases/home/home-bedroom.png'
+import homeBedroom from '../assets/cases/home/home-bedroom.webp'
+import homeKitchenBlur from '../assets/cases/home/home-kitchen-blur.webp'
+import homeKitchenPng from '../assets/cases/home/home-kitchen.png'
+import homeKitchen from '../assets/cases/home/home-kitchen.webp'
 import home1Blur from '../assets/cases/home/home-1-blur.webp'
 import home1Png from '../assets/cases/home/home-1.png'
 import home1 from '../assets/cases/home/home-1.webp'
+import kitchenHeroBlur from '../assets/cases/kitchen/kitchen-hero-blur.webp'
+import kitchenHeroPng from '../assets/cases/kitchen/kitchen-hero.png'
+import kitchenHero from '../assets/cases/kitchen/kitchen-hero.webp'
 import kitchen1Blur from '../assets/cases/kitchen/kitchen-1-blur.webp'
 import kitchen1Png from '../assets/cases/kitchen/kitchen-1.png'
 import kitchen1 from '../assets/cases/kitchen/kitchen-1.webp'
 import kitchen2Blur from '../assets/cases/kitchen/kitchen-2-blur.webp'
 import kitchen2Png from '../assets/cases/kitchen/kitchen-2.png'
 import kitchen2 from '../assets/cases/kitchen/kitchen-2.webp'
+import loungeHeroBlur from '../assets/cases/lounge/lounge-hero-blur.webp'
+import loungeHeroPng from '../assets/cases/lounge/lounge-hero.png'
+import loungeHero from '../assets/cases/lounge/lounge-hero.webp'
 import lounge1Blur from '../assets/cases/lounge/lounge-1-blur.webp'
 import lounge1Png from '../assets/cases/lounge/lounge-1.png'
 import lounge1 from '../assets/cases/lounge/lounge-1.webp'
 import lounge2Blur from '../assets/cases/lounge/lounge-2-blur.webp'
 import lounge2Png from '../assets/cases/lounge/lounge-2.png'
 import lounge2 from '../assets/cases/lounge/lounge-2.webp'
+import newYearTablewareHeroBlur from '../assets/cases/new-year-tableware/new-year-tableware-hero-blur.webp'
+import newYearTablewareHeroPng from '../assets/cases/new-year-tableware/new-year-tableware-hero.png'
+import newYearTablewareHero from '../assets/cases/new-year-tableware/new-year-tableware-hero.webp'
+import pahlavaHeroBlur from '../assets/cases/pahlava/pahlava-hero-blur.webp'
+import pahlavaHeroPng from '../assets/cases/pahlava/pahlava-hero.png'
+import pahlavaHero from '../assets/cases/pahlava/pahlava-hero.webp'
 import pahlava1Blur from '../assets/cases/pahlava/pahlava-1-blur.webp'
 import pahlava1Png from '../assets/cases/pahlava/pahlava-1.png'
 import pahlava1 from '../assets/cases/pahlava/pahlava-1.webp'
 import pahlava2Blur from '../assets/cases/pahlava/pahlava-2-blur.webp'
 import pahlava2Png from '../assets/cases/pahlava/pahlava-2.png'
 import pahlava2 from '../assets/cases/pahlava/pahlava-2.webp'
+import tablewareHeroBlur from '../assets/cases/tableware/tableware-hero-blur.webp'
+import tablewareHeroPng from '../assets/cases/tableware/tableware-hero.png'
+import tablewareHero from '../assets/cases/tableware/tableware-hero.webp'
 import tableware1Blur from '../assets/cases/tableware/tableware-1-blur.webp'
 import tableware1Png from '../assets/cases/tableware/tableware-1.png'
 import tableware1 from '../assets/cases/tableware/tableware-1.webp'
+import voltHeroBlur from '../assets/cases/volt/volt-hero-blur.webp'
+import voltHeroPng from '../assets/cases/volt/volt-hero.png'
+import voltHero from '../assets/cases/volt/volt-hero.webp'
 import volt1Blur from '../assets/cases/volt/volt-1-blur.webp'
 import volt1Png from '../assets/cases/volt/volt-1.png'
 import volt1 from '../assets/cases/volt/volt-1.webp'
@@ -55,8 +82,7 @@ export const cases: CaseStudy[] = [
     id: 'pahlava',
     title: 'Cafe Pahlava',
     description: 'Кафе «Pahlava», г. Астана — айдентика и digital для премиального гастрономического пространства.',
-    image:
-      'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80',
+    image: caseImage(pahlavaHero, pahlavaHeroPng, pahlavaHeroBlur),
     images: [
       caseImage(pahlava1, pahlava1Png, pahlava1Blur),
       caseImage(pahlava2, pahlava2Png, pahlava2Blur),
@@ -67,8 +93,7 @@ export const cases: CaseStudy[] = [
     id: 'shishka-expo',
     title: 'ШИШКА EXPO',
     description: 'Лаундж-бар премиум-класса: атмосфера, брендинг и визуальная система.',
-    image:
-      'https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80',
+    image: caseImage(loungeHero, loungeHeroPng, loungeHeroBlur),
     images: [
       caseImage(lounge1, lounge1Png, lounge1Blur),
       caseImage(lounge2, lounge2Png, lounge2Blur),
@@ -174,7 +199,10 @@ export const cases: CaseStudy[] = [
     description: 'Бар, г. Астана — визуальный стиль и промо.',
     image:
       'https://images.unsplash.com/photo-1566417713940-d0291177fb99?auto=format&fit=crop&w=1200&q=80',
-    images: [caseImage(dance1, dance1Png, dance1Blur)],
+    images: [
+      caseImage(danceKids, danceKidsPng, danceKidsBlur),
+      caseImage(dance1, dance1Png, dance1Blur),
+    ],
     category: 'HoReCa',
   },
   {
@@ -229,18 +257,23 @@ export const cases: CaseStudy[] = [
     id: 'sarah-home',
     title: 'Sarah Home',
     description: 'Салон штор — премиальный каталог и digital.',
-    image:
-      'https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=1200&q=80',
-    images: [caseImage(home1, home1Png, home1Blur)],
+    image: caseImage(homeBedroom, homeBedroomPng, homeBedroomBlur),
+    images: [
+      caseImage(homeBedroom, homeBedroomPng, homeBedroomBlur),
+      caseImage(homeKitchen, homeKitchenPng, homeKitchenBlur),
+      caseImage(home1, home1Png, home1Blur),
+    ],
     category: 'Interior',
   },
   {
     id: 'volton',
-    title: 'VOLTON',
+    title: 'Volt On',
     description: 'Электроника и энергетика — omnichannel и performance.',
-    image:
-      'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80',
-    images: [caseImage(volt1, volt1Png, volt1Blur)],
+    image: caseImage(voltHero, voltHeroPng, voltHeroBlur),
+    images: [
+      caseImage(voltHero, voltHeroPng, voltHeroBlur),
+      caseImage(volt1, volt1Png, volt1Blur),
+    ],
     category: 'Electronics',
   },
   {
@@ -255,18 +288,31 @@ export const cases: CaseStudy[] = [
     id: '4tech',
     title: '4TECH',
     description: 'Магазин электроники — digital-витрина и реклама.',
-    image:
-      'https://images.unsplash.com/photo-1550009158-9eb35e33960c?auto=format&fit=crop&w=1200&q=80',
+    image: caseImage(kitchenHero, kitchenHeroPng, kitchenHeroBlur),
+    images: [
+      caseImage(kitchenHero, kitchenHeroPng, kitchenHeroBlur),
+      caseImage(kitchen1, kitchen1Png, kitchen1Blur),
+      caseImage(kitchen2, kitchen2Png, kitchen2Blur),
+    ],
     category: 'Retail Tech',
   },
   {
     id: 'demi-porselen',
     title: 'Demi Porselen',
     description: 'Посуда и фарфор — премиальный визуал и контент.',
-    image:
-      'https://images.unsplash.com/photo-1603199506016-b9a594b593c0?auto=format&fit=crop&w=1200&q=80',
-    images: [caseImage(tableware1, tableware1Png, tableware1Blur)],
+    image: caseImage(tablewareHero, tablewareHeroPng, tablewareHeroBlur),
+    images: [
+      caseImage(tablewareHero, tablewareHeroPng, tablewareHeroBlur),
+      caseImage(tableware1, tableware1Png, tableware1Blur),
+    ],
     category: 'Lifestyle',
+  },
+  {
+    id: 'new-year-tableware',
+    title: 'New Year Tableware',
+    description: 'Праздничная сервировка и предметная съёмка посуды с новогодними акцентами.',
+    image: caseImage(newYearTablewareHero, newYearTablewareHeroPng, newYearTablewareHeroBlur),
+    category: 'Tableware',
   },
   {
     id: 'joy-gardens',
@@ -320,8 +366,7 @@ export const cases: CaseStudy[] = [
     id: 'happy-club',
     title: 'happy club',
     description: 'Магазин детских товаров — e‑commerce и контент.',
-    image:
-      'https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&fit=crop&w=1200&q=80',
+    image: caseImage(danceKids, danceKidsPng, danceKidsBlur),
     category: 'Kids Retail',
   },
   {

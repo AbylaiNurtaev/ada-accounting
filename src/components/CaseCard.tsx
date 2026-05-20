@@ -3,27 +3,6 @@ import { ChevronLeft, ChevronRight, X } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react'
 import type { CaseImage, CaseStudy } from '../data/cases'
 
-const MARQUEE_CHUNK =
-  'JADI GROUP | КЕЙСЫ | JADI GROUP | КЕЙСЫ | JADI GROUP | КЕЙСЫ | '
-
-function CaseMarquee() {
-  return (
-    <div className="relative overflow-hidden bg-cyber-accent py-1 shadow-[0_0_24px_rgba(255,212,0,0.35)] sm:py-[7px]">
-      <div className="flex w-max animate-marquee-x will-change-transform">
-        <span className="inline-flex whitespace-nowrap px-2 font-sans text-[7px] font-semibold uppercase tracking-[0.18em] text-black sm:px-3 sm:text-[10px] sm:tracking-[0.35em]">
-          {MARQUEE_CHUNK.repeat(3)}
-        </span>
-        <span
-          className="inline-flex whitespace-nowrap px-2 font-sans text-[7px] font-semibold uppercase tracking-[0.18em] text-black sm:px-3 sm:text-[10px] sm:tracking-[0.35em]"
-          aria-hidden
-        >
-          {MARQUEE_CHUNK.repeat(3)}
-        </span>
-      </div>
-    </div>
-  )
-}
-
 type CaseCardProps = {
   item: CaseStudy
   index: number
@@ -125,10 +104,8 @@ export function CaseCard({ item, index }: CaseCardProps) {
         <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-cyber-accent/25 via-transparent to-cyber-accent/10 blur-xl sm:rounded-2xl" />
       </div>
 
-      <CaseMarquee />
-
       <div className="relative flex min-h-0 flex-1 flex-col">
-        <div className="relative h-[116px] shrink-0 overflow-hidden sm:h-[280px] md:h-[300px]">
+        <div className="relative h-[150px] shrink-0 overflow-hidden sm:h-[320px] md:h-[340px]">
           <div
             className={`absolute inset-0 flex flex-col justify-end bg-[radial-gradient(circle_at_30%_20%,rgba(255,212,0,0.28),transparent_34%),linear-gradient(135deg,#171717,#050505_60%,#241f05)] p-4 transition-opacity duration-500 ${
               imageLoaded && !imageFailed ? 'opacity-0' : 'opacity-100'
