@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jadigroup.vercel.app/sitemap.xml
+Sitemap: https://ada-accounting.vercel.app/sitemap.xml
