@@ -34,9 +34,6 @@ import lounge2 from '../assets/cases/lounge/lounge-2.webp'
 import newYearTablewareHeroBlur from '../assets/cases/new-year-tableware/new-year-tableware-hero-blur.webp'
 import newYearTablewareHeroJpg from '../assets/cases/new-year-tableware/new-year-tableware-hero.jpg'
 import newYearTablewareHero from '../assets/cases/new-year-tableware/new-year-tableware-hero.webp'
-import pahlavaHeroBlur from '../assets/cases/pahlava/pahlava-hero-blur.webp'
-import pahlavaHeroJpg from '../assets/cases/pahlava/pahlava-hero.jpg'
-import pahlavaHero from '../assets/cases/pahlava/pahlava-hero.webp'
 import pahlava1Blur from '../assets/cases/pahlava/pahlava-1-blur.webp'
 import pahlava1Png from '../assets/cases/pahlava/pahlava-1.png'
 import pahlava1 from '../assets/cases/pahlava/pahlava-1.webp'
@@ -82,9 +79,9 @@ export const cases: CaseStudy[] = [
     id: 'pahlava',
     title: 'Cafe Pahlava',
     description: 'Кафе «Pahlava», г. Астана — айдентика и digital для премиального гастрономического пространства.',
-    image: caseImage(pahlavaHero, pahlavaHeroJpg, pahlavaHeroBlur),
+    image:
+      'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80',
     images: [
-      caseImage(pahlavaHero, pahlavaHeroJpg, pahlavaHeroBlur),
       caseImage(pahlava1, pahlava1Png, pahlava1Blur),
       caseImage(pahlava2, pahlava2Png, pahlava2Blur),
     ],
@@ -208,12 +205,12 @@ export const cases: CaseStudy[] = [
     category: 'HoReCa',
   },
   {
-    id: 'adellina-iskakova',
-    title: 'Adellina Iskakova',
-    description: 'Личный бренд — контент, позиционирование и соцсети.',
-    image:
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1200&q=80',
-    category: 'Personal Brand',
+    id: 'happy-club',
+    title: 'happy club',
+    description: 'Магазин детских товаров — e-commerce и контент.',
+    image: caseImage(danceKids, danceKidsJpg, danceKidsBlur),
+    images: [caseImage(danceKids, danceKidsJpg, danceKidsBlur)],
+    category: 'Kids Retail',
   },
   {
     id: 'twinmos',
@@ -364,22 +361,5 @@ export const cases: CaseStudy[] = [
     image:
       'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80',
     category: 'Education',
-  },
-  {
-    id: 'happy-club',
-    title: 'happy club',
-    description: 'Магазин детских товаров — e‑commerce и контент.',
-    image: caseImage(danceKids, danceKidsJpg, danceKidsBlur),
-    images: [caseImage(danceKids, danceKidsJpg, danceKidsBlur)],
-    category: 'Kids Retail',
-  },
-  {
-    id: 'more-projects',
-    title: 'И ещё многие другие проекты…',
-    description:
-      'Расширенное портфолио: от локальных брендов до федеральных кампаний — расскажем на встрече.',
-    image:
-      'https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1200&q=80',
-    category: 'Portfolio',
   },
 ]
