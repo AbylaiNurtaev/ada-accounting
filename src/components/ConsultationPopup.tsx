@@ -7,13 +7,6 @@ import { submitLead } from '../lib/submitLead'
 const POPUP_SESSION_KEY = 'jadi-consultation-popup-closed-v2'
 export const OPEN_CONSULTATION_POPUP_EVENT = 'jadi-open-consultation-popup'
 
-const benefits = [
-  'Анализ вашей ниши',
-  'Рекомендации по рекламе',
-  'Стратегия роста',
-  'Точки масштабирования бизнеса',
-]
-
 export function ConsultationPopup() {
   const [open, setOpen] = useState(false)
   const [sent, setSent] = useState(false)
@@ -188,16 +181,6 @@ export function ConsultationPopup() {
                     Оставьте контакты, и маркетолог JADI GROUP покажет, как усилить рекламу, заявки и продажи.
                   </p>
 
-                  <div className="mt-7 space-y-3">
-                    {benefits.map((benefit) => (
-                      <div key={benefit} className="flex items-center gap-3 text-sm font-semibold text-zinc-100">
-                        <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-primary-500/45 text-primary-500">
-                          <CheckCircle2 size={14} />
-                        </span>
-                        {benefit}
-                      </div>
-                    ))}
-                  </div>
                 </aside>
 
                 <form onSubmit={handleSubmit} className="rounded-3xl border border-white/10 bg-zinc-950/45 p-6">
