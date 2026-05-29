@@ -31,9 +31,6 @@ import lounge1 from '../assets/cases/lounge/lounge-1.webp'
 import lounge2Blur from '../assets/cases/lounge/lounge-2-blur.webp'
 import lounge2Png from '../assets/cases/lounge/lounge-2.png'
 import lounge2 from '../assets/cases/lounge/lounge-2.webp'
-import newYearTablewareHeroBlur from '../assets/cases/new-year-tableware/new-year-tableware-hero-blur.webp'
-import newYearTablewareHeroJpg from '../assets/cases/new-year-tableware/new-year-tableware-hero.jpg'
-import newYearTablewareHero from '../assets/cases/new-year-tableware/new-year-tableware-hero.webp'
 import pahlavaHeroBlur from '../assets/cases/pahlava/pahlava-hero-blur.webp'
 import pahlavaHeroJpg from '../assets/cases/pahlava/pahlava-hero.jpg'
 import pahlavaHero from '../assets/cases/pahlava/pahlava-hero.webp'
@@ -123,12 +120,12 @@ export const cases: CaseStudy[] = [
     category: 'Auto',
   },
   {
-    id: 'miababy',
-    title: 'MIABABY',
-    description: 'Онлайн-магазин товаров для малышей: UX, контент и визуальная коммуникация.',
+    id: 'happy-club',
+    title: 'HAPPY CLUB',
+    description: 'Магазин детских товаров — e-commerce и контент.',
     image:
-      'https://images.unsplash.com/photo-1515488043661-04fab204513e?auto=format&fit=crop&w=1200&q=80',
-    category: 'E‑commerce',
+      'https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=1200&q=80',
+    category: 'Kids Retail',
   },
   {
     id: 'jansaya',
@@ -312,14 +309,6 @@ export const cases: CaseStudy[] = [
     category: 'Lifestyle',
   },
   {
-    id: 'new-year-tableware',
-    title: 'New Year Tableware',
-    description: 'Праздничная сервировка и предметная съёмка посуды с новогодними акцентами.',
-    image: caseImage(newYearTablewareHero, newYearTablewareHeroJpg, newYearTablewareHeroBlur),
-    images: [caseImage(newYearTablewareHero, newYearTablewareHeroJpg, newYearTablewareHeroBlur)],
-    category: 'Tableware',
-  },
-  {
     id: 'joy-gardens',
     title: 'JOY GARDENS',
     description: 'Ландшафтный дизайн — портфолио и лидогенерация.',
@@ -345,7 +334,7 @@ export const cases: CaseStudy[] = [
   },
   {
     id: 'dero',
-    title: 'DERO',
+    title: 'DERO MEBEL',
     description: 'Мебельная компания — каталог и B2B-презентации.',
     image:
       'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1200&q=80',
