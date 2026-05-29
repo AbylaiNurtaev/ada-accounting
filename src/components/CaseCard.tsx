@@ -132,8 +132,8 @@ export function CaseCard({ item, index }: CaseCardProps) {
               />
             </picture>
           </div>
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black via-black/35 to-transparent" />
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/90 to-transparent" />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black via-black/55 to-transparent sm:via-black/35" />
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black to-transparent sm:h-1/3 sm:from-black/90" />
 
           <span className="absolute left-2 top-2 rounded-full border border-primary-500/35 bg-black/50 px-2 py-0.5 text-[7px] font-semibold uppercase tracking-widest text-primary-100 backdrop-blur-md sm:left-4 sm:top-4 sm:px-3 sm:py-1 sm:text-[10px]">
             {item.category}

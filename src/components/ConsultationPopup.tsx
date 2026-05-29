@@ -95,6 +95,10 @@ export function ConsultationPopup() {
     }
   }
 
+  const handlePhoneInput = (event: FormEvent<HTMLInputElement>) => {
+    event.currentTarget.value = event.currentTarget.value.replace(/\D/g, '')
+  }
+
   const trapFocus = (event: KeyboardEvent<HTMLDivElement>) => {
     if (event.key !== 'Tab' || !modalRef.current) return
 
@@ -207,8 +211,12 @@ export function ConsultationPopup() {
                         required
                         name="phone"
                         type="tel"
+                        inputMode="numeric"
+                        pattern="[0-9]*"
+                        maxLength={15}
+                        onInput={handlePhoneInput}
                         className="w-full rounded-2xl border border-primary-500/20 bg-black/70 px-4 py-3 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
-                        placeholder="+7 777 000 00 00"
+                        placeholder="77700000000"
                       />
                     </label>
 

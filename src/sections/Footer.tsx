@@ -38,9 +38,24 @@ export function Footer() {
           <h3 className="mb-5 text-sm font-bold uppercase tracking-wide text-white">Контакты</h3>
           <ul className="space-y-2 text-sm text-zinc-200">
             <li className="flex items-center gap-2"><Clock3 size={14} /> ПН-ПТ: 9:00 - 18:00</li>
-            <li className="flex items-center gap-2"><Phone size={14} /> +7 (747) 649 63 60</li>
+            <li className="flex items-center gap-2">
+              <Phone size={14} />
+              <a href="https://wa.me/77476496360" target="_blank" rel="noreferrer" className="hover:text-primary-100">
+                +7 (747) 649 63 60
+              </a>
+            </li>
             <li className="flex items-center gap-2"><Mail size={14} /> ainurnurtaeva88@gmail.com</li>
-            <li className="flex items-center gap-2"><InstagramIcon /> jadi__group</li>
+            <li className="flex items-center gap-2">
+              <InstagramIcon />
+              <a
+                href="https://www.instagram.com/jadi__group?igsh=MTJmMXZjbzcwNWs2MQ=="
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-primary-100"
+              >
+                jadi__group
+              </a>
+            </li>
           </ul>
         </div>
       </div>
