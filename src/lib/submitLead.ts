@@ -1,14 +1,16 @@
 export type LeadFormData = {
   name: string
   phone: string
-  business?: string
+  company?: string
+  description?: string
 }
 
 export async function submitLead(lead: LeadFormData) {
   const data = {
     name: lead.name.trim(),
     phone: lead.phone.trim(),
-    business: lead.business?.trim(),
+    company: lead.company?.trim(),
+    description: lead.description?.trim(),
   }
 
   if (!data.name || !data.phone) {

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { AnimatedSection } from '../components/AnimatedSection'
+import { OPEN_CONSULTATION_POPUP_EVENT } from '../components/ConsultationPopup'
 
 export function Hero() {
   return (
@@ -18,12 +19,13 @@ export function Hero() {
             аналитика и рост продаж в одной команде.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
-            <a
-              href="/#services"
-              className="rounded-full border border-primary-500 bg-primary-500 px-7 py-3 text-sm font-semibold text-black transition hover:-translate-y-0.5 hover:bg-primary-100"
+            <button
+              type="button"
+              onClick={() => window.dispatchEvent(new Event(OPEN_CONSULTATION_POPUP_EVENT))}
+              className="rounded-full border border-primary-500 bg-primary-500 px-7 py-3 text-sm font-semibold text-black shadow-[0_8px_30px_rgba(255,212,0,0.30)] transition hover:-translate-y-0.5 hover:bg-primary-100 hover:shadow-[0_12px_40px_rgba(255,212,0,0.45)]"
             >
-              Наши услуги
-            </a>
+              Бесплатная консультация
+            </button>
             <a
               href="/#tariffs"
               className="rounded-full border border-primary-500/35 bg-black/40 px-7 py-3 text-sm font-semibold text-zinc-100 transition hover:border-primary-500 hover:text-primary-100"

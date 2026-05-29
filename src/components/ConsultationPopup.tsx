@@ -79,9 +79,10 @@ export function ConsultationPopup() {
 
     try {
       await submitLead({
-        business: String(formData.get('business') ?? ''),
         name: String(formData.get('name') ?? ''),
         phone: String(formData.get('phone') ?? ''),
+        company: String(formData.get('company') ?? ''),
+        description: String(formData.get('description') ?? ''),
       })
 
       form.reset()
@@ -158,7 +159,7 @@ export function ConsultationPopup() {
                 <CheckCircle2 className="h-14 w-14 text-primary-500" />
                 <h2 className="mt-5 text-3xl font-extrabold text-white">Заявка успешно отправлена</h2>
                 <p className="mt-3 max-w-md text-base leading-relaxed text-zinc-200/85">
-                  Спасибо, мы свяжемся с вами и подготовим первые рекомендации по росту.
+                  Спасибо! Мы свяжемся с вами в ближайшее время.
                 </p>
                 <button
                   type="button"
@@ -187,22 +188,10 @@ export function ConsultationPopup() {
                   <div className="grid gap-4">
                     <label className="block">
                       <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.16em] text-primary-100">
-                        Чем вы занимаетесь / Ваш бизнес
-                      </span>
-                      <input
-                        ref={nameInputRef}
-                        required
-                        name="business"
-                        className="w-full rounded-2xl border border-primary-500/20 bg-black/70 px-4 py-3 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
-                        placeholder="Например: салон, клиника, интернет-магазин"
-                      />
-                    </label>
-
-                    <label className="block">
-                      <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.16em] text-primary-100">
                         Имя
                       </span>
                       <input
+                        ref={nameInputRef}
                         required
                         name="name"
                         className="w-full rounded-2xl border border-primary-500/20 bg-black/70 px-4 py-3 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
@@ -212,7 +201,7 @@ export function ConsultationPopup() {
 
                     <label className="block">
                       <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.16em] text-primary-100">
-                        Номер телефона
+                        Телефон
                       </span>
                       <input
                         required
@@ -220,6 +209,31 @@ export function ConsultationPopup() {
                         type="tel"
                         className="w-full rounded-2xl border border-primary-500/20 bg-black/70 px-4 py-3 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
                         placeholder="+7 777 000 00 00"
+                      />
+                    </label>
+
+                    <label className="block">
+                      <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.16em] text-primary-100">
+                        Компания{' '}
+                        <span className="normal-case font-normal text-zinc-500 tracking-normal">(необязательно)</span>
+                      </span>
+                      <input
+                        name="company"
+                        className="w-full rounded-2xl border border-primary-500/20 bg-black/70 px-4 py-3 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+                        placeholder="Название вашей компании"
+                      />
+                    </label>
+
+                    <label className="block">
+                      <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.16em] text-primary-100">
+                        Описание задачи
+                      </span>
+                      <textarea
+                        required
+                        name="description"
+                        rows={3}
+                        className="w-full resize-none rounded-2xl border border-primary-500/20 bg-black/70 px-4 py-3 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+                        placeholder="Расскажите, что хотите улучшить или с чего начать"
                       />
                     </label>
                   </div>
