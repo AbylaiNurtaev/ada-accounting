@@ -220,14 +220,10 @@ export const cases: CaseStudy[] = [
   },
   {
     id: 'otlichnaya-mebel',
-    title: 'Отличная Мебель',
+    title: '100ЛИЧНАЯ МЕБЕЛЬ',
     description: 'Мебель и интерьер — каталог, визуал и продвижение.',
-    image: caseImage(homeBedroom, homeBedroomJpg, homeBedroomBlur),
-    images: [
-      caseImage(homeBedroom, homeBedroomJpg, homeBedroomBlur),
-      caseImage(homeKitchen, homeKitchenJpg, homeKitchenBlur),
-      caseImage(home1, home1Png, home1Blur),
-    ],
+    image:
+      'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=80',
     category: 'Furniture',
   },
   {
