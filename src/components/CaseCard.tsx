@@ -150,7 +150,11 @@ export function CaseCard({ item, index }: CaseCardProps) {
             </p>
           </div>
 
-          <motion.span
+          <motion.a
+            href="https://www.instagram.com/jadi__group?igsh=MTJmMXZjbzcwNWs2MQ=="
+            target="_blank"
+            rel="noreferrer"
+            onClick={(event) => event.stopPropagation()}
             className="mt-auto inline-flex w-fit items-center justify-center rounded-full bg-cyber-accent px-3 py-1.5 text-[10px] font-semibold text-black shadow-[0_12px_40px_-12px_rgba(255,212,0,0.65)] transition-shadow duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyber-accent sm:px-7 sm:py-2.5 sm:text-sm"
             whileHover={{
               scale: 1.05,
@@ -160,7 +164,7 @@ export function CaseCard({ item, index }: CaseCardProps) {
             transition={{ type: 'spring', stiffness: 420, damping: 22 }}
           >
             Подробнее
-          </motion.span>
+          </motion.a>
         </div>
       </div>
     </motion.article>
