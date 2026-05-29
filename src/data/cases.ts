@@ -34,6 +34,9 @@ import lounge2 from '../assets/cases/lounge/lounge-2.webp'
 import newYearTablewareHeroBlur from '../assets/cases/new-year-tableware/new-year-tableware-hero-blur.webp'
 import newYearTablewareHeroJpg from '../assets/cases/new-year-tableware/new-year-tableware-hero.jpg'
 import newYearTablewareHero from '../assets/cases/new-year-tableware/new-year-tableware-hero.webp'
+import pahlavaHeroBlur from '../assets/cases/pahlava/pahlava-hero-blur.webp'
+import pahlavaHeroJpg from '../assets/cases/pahlava/pahlava-hero.jpg'
+import pahlavaHero from '../assets/cases/pahlava/pahlava-hero.webp'
 import pahlava1Blur from '../assets/cases/pahlava/pahlava-1-blur.webp'
 import pahlava1Png from '../assets/cases/pahlava/pahlava-1.png'
 import pahlava1 from '../assets/cases/pahlava/pahlava-1.webp'
@@ -79,9 +82,9 @@ export const cases: CaseStudy[] = [
     id: 'pahlava',
     title: 'Cafe Pahlava',
     description: 'Кафе «Pahlava», г. Астана — айдентика и digital для премиального гастрономического пространства.',
-    image:
-      'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80',
+    image: caseImage(pahlavaHero, pahlavaHeroJpg, pahlavaHeroBlur),
     images: [
+      caseImage(pahlavaHero, pahlavaHeroJpg, pahlavaHeroBlur),
       caseImage(pahlava1, pahlava1Png, pahlava1Blur),
       caseImage(pahlava2, pahlava2Png, pahlava2Blur),
     ],
@@ -132,7 +135,7 @@ export const cases: CaseStudy[] = [
     title: 'САНАТОРИЙ ЖАНСАЯ',
     description: 'Санаторий в пос. Сарыагаш, ЮКО — премиальный оздоровительный комплекс.',
     image:
-      'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=80',
     category: 'Wellness',
   },
   {
@@ -163,7 +166,7 @@ export const cases: CaseStudy[] = [
     title: 'NEOPRESCHOOL',
     description: 'Образовательный центр, г. Алматы — digital-экосистема для школы.',
     image:
-      'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80',
     category: 'Education',
   },
   {
@@ -187,7 +190,7 @@ export const cases: CaseStudy[] = [
     title: 'NEOCLINIC',
     description: 'Клиника высшей медицины, г. Астана — digital и репутация.',
     image:
-      'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=80',
     category: 'Медицина',
   },
   {
@@ -222,8 +225,12 @@ export const cases: CaseStudy[] = [
     id: 'otlichnaya-mebel',
     title: 'Отличная Мебель',
     description: 'Мебель и интерьер — каталог, визуал и продвижение.',
-    image:
-      'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=80',
+    image: caseImage(homeBedroom, homeBedroomJpg, homeBedroomBlur),
+    images: [
+      caseImage(homeBedroom, homeBedroomJpg, homeBedroomBlur),
+      caseImage(homeKitchen, homeKitchenJpg, homeKitchenBlur),
+      caseImage(home1, home1Png, home1Blur),
+    ],
     category: 'Furniture',
   },
   {
@@ -236,10 +243,10 @@ export const cases: CaseStudy[] = [
   },
   {
     id: 'sayuri',
-    title: 'SAYURI',
+    title: 'SAYURI FLOWERS',
     description: 'Flowers and Decor — флористика и оформление событий.',
     image:
-      'https://images.unsplash.com/photo-1487530811176-3780de880c2d?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1200&q=80',
     category: 'Retail',
   },
   {
