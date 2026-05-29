@@ -147,17 +147,15 @@ export const cases: CaseStudy[] = [
     id: 'geely-orbis',
     title: 'Geely Astana (Orbis Auto)',
     description: 'Дилерский центр Geely в Астане — кампании, соцсети и медиа.',
-    image:
-      'https://images.unsplash.com/photo-1619767886558-efdc259cde1a?auto=format&fit=crop&w=1200&q=80',
-    images: ['/cases/geely-monjaro.jpg'],
+    image: 'https://upload.wikimedia.org/wikipedia/commons/2/20/Geely_Monjaro.jpg',
+    images: ['https://upload.wikimedia.org/wikipedia/commons/2/20/Geely_Monjaro.jpg'],
     category: 'Automotive',
   },
   {
     id: 'qazqar',
     title: 'QAZQAR',
     description: 'Агентство по прокату автомобилей — интерфейсы, бронирование и айдентика.',
-    image:
-      'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80',
+    image: '/cases/geely-monjaro.jpg',
     category: 'Car Rental',
   },
   {
@@ -266,7 +264,7 @@ export const cases: CaseStudy[] = [
   },
   {
     id: 'volton',
-    title: 'Volt On',
+    title: 'VOLTON',
     description: 'Электроника и энергетика — omnichannel и performance.',
     image: caseImage(voltHero, voltHeroJpg, voltHeroBlur),
     images: [
