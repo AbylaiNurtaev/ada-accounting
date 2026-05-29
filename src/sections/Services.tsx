@@ -83,8 +83,8 @@ export function Services() {
           centered
         />
 
-        <div className="mt-8 grid items-stretch gap-4 lg:grid-cols-3">
-          <article className="glass group relative flex h-full flex-col overflow-hidden rounded-[2rem] p-5 transition duration-300 hover:-translate-y-1 hover:border-primary-500/70 hover:shadow-[0_28px_90px_rgba(255,212,0,0.18)] sm:p-6">
+        <div className="mt-8 grid items-stretch gap-4 lg:grid-cols-2">
+          <article className="glass group relative flex h-full flex-col overflow-visible rounded-[2rem] p-5 transition duration-300 hover:-translate-y-1 hover:border-primary-500/70 hover:shadow-[0_28px_90px_rgba(255,212,0,0.18)] sm:p-6">
             <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-primary-500/80 to-transparent" />
             <div className="inline-flex w-fit rounded-full bg-primary-500 px-8 py-2 text-xl font-extrabold uppercase tracking-wide text-black">
               ТАРИФ 1
@@ -103,7 +103,7 @@ export function Services() {
             </div>
           </article>
 
-          <article className="glass group relative flex h-full flex-col overflow-hidden rounded-[2rem] p-5 transition duration-300 hover:-translate-y-1 hover:border-primary-500/70 hover:shadow-[0_28px_90px_rgba(255,212,0,0.18)] sm:p-6">
+          <article className="glass group relative flex h-full flex-col overflow-visible rounded-[2rem] p-5 transition duration-300 hover:-translate-y-1 hover:border-primary-500/70 hover:shadow-[0_28px_90px_rgba(255,212,0,0.18)] sm:p-6">
             <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-primary-500/80 to-transparent" />
             <div className="inline-flex w-fit rounded-full bg-primary-500 px-8 py-2 text-xl font-extrabold uppercase tracking-wide text-black">
               ТАРИФ 2
@@ -128,7 +128,7 @@ export function Services() {
             </div>
           </article>
 
-          <article className="glass group relative flex h-full flex-col overflow-hidden rounded-[2rem] p-5 transition duration-300 hover:-translate-y-1 hover:border-primary-500/70 hover:shadow-[0_28px_90px_rgba(255,212,0,0.18)] sm:p-6">
+          <article className="glass group relative flex h-full flex-col overflow-visible rounded-[2rem] p-5 transition duration-300 hover:-translate-y-1 hover:border-primary-500/70 hover:shadow-[0_28px_90px_rgba(255,212,0,0.18)] sm:p-6 lg:col-span-2">
             <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-primary-500/80 to-transparent" />
             <div className="inline-flex w-fit rounded-full bg-primary-500 px-8 py-2 text-xl font-extrabold uppercase tracking-wide text-black">
               ТАРИФ 3
@@ -137,9 +137,9 @@ export function Services() {
               Полная маркетинговая система для масштабирования.
             </p>
 
-            <div className="mt-5 grid flex-1 gap-3">
+            <div className="mt-5 grid flex-1 gap-3 lg:grid-cols-3">
               {tariffThreeColumns.map((column) => (
-                <div key={column.title} className="rounded-2xl border border-primary-500/15 bg-black/35 p-3">
+                <div key={column.title} className="rounded-2xl border border-primary-500/15 bg-black/35 p-4">
                   <h3 className="text-base font-extrabold text-white">{column.title}</h3>
                   <TariffList items={column.items} />
                 </div>
