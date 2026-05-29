@@ -32,22 +32,36 @@ const tariffTwoSmmItems = [
 
 const tariffThreeColumns = [
   {
-    title: 'SMM',
-    items: ['Контент', 'Reels', 'Stories', 'Дизайн', 'Ведение соцсетей'],
+    title: 'Все из Тарифа 1',
+    items: tariffOneItems,
   },
   {
-    title: 'Таргет',
-    items: ['Реклама Meta/TikTok', 'Аналитика', 'Креативы', 'Масштабирование', 'Оптимизация'],
+    title: 'Все из Тарифа 2',
+    items: [
+      'Дополнительная оптимизация',
+      'Масштабирование рекламы',
+      ...tariffTwoSmmItems,
+    ],
   },
   {
-    title: 'Маркетинг',
-    items: ['Маркетинговая стратегия', 'Анализ конкурентов', 'Медиаплан', 'Контроль KPI', 'Growth marketing'],
+    title: 'Услуги Тарифа 3',
+    items: [
+      'Реклама Meta/TikTok',
+      'Аналитика',
+      'Креативы',
+      'Масштабирование',
+      'Оптимизация',
+      'Маркетинговая стратегия',
+      'Медиаплан',
+      'Контроль KPI',
+      'Growth marketing',
+    ],
   },
 ]
 
 function TariffList({ items }: { items: string[] }) {
   return (
-    <ul className="mt-4 space-y-2 text-sm leading-relaxed text-zinc-200/88">
+    <ul className="mt-3 space-y-1.5 text-sm leading-snug text-zinc-200/88">
       {items.map((item) => (
         <li key={item} className="flex gap-2">
           <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary-500" />
@@ -69,36 +83,36 @@ export function Services() {
           centered
         />
 
-        <div className="mt-12 grid items-stretch gap-6 lg:grid-cols-3">
-          <article className="glass group relative flex h-full min-h-[640px] flex-col overflow-hidden rounded-[2rem] p-6 transition duration-300 hover:-translate-y-1 hover:border-primary-500/70 hover:shadow-[0_28px_90px_rgba(255,212,0,0.18)] sm:p-8">
+        <div className="mt-8 grid items-stretch gap-4 lg:grid-cols-3">
+          <article className="glass group relative flex h-full flex-col overflow-hidden rounded-[2rem] p-5 transition duration-300 hover:-translate-y-1 hover:border-primary-500/70 hover:shadow-[0_28px_90px_rgba(255,212,0,0.18)] sm:p-6">
             <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-primary-500/80 to-transparent" />
             <div className="inline-flex w-fit rounded-full bg-primary-500 px-8 py-2 text-xl font-extrabold uppercase tracking-wide text-black">
               ТАРИФ 1
             </div>
-            <p className="mt-5 max-w-lg text-sm font-semibold italic leading-relaxed text-primary-100">
+            <p className="mt-3 max-w-lg text-sm font-semibold italic leading-snug text-primary-100">
               Таргет для стабильного потока заявок. Быстрый запуск и контроль бюджета.
             </p>
 
-            <div className="mt-8 flex-1">
+            <div className="mt-5 flex-1">
               <h3 className="text-xl font-extrabold uppercase tracking-wide text-white">ТАРГЕТ</h3>
               <TariffList items={tariffOneItems} />
             </div>
 
-            <div className="mt-8 inline-flex w-fit rounded-2xl bg-gradient-to-r from-primary-500 to-primary-50 px-8 py-3 text-xl font-extrabold leading-none text-black shadow-[0_18px_50px_rgba(255,212,0,0.16)]">
+            <div className="mt-5 inline-flex w-fit rounded-2xl bg-gradient-to-r from-primary-500 to-primary-50 px-8 py-3 text-xl font-extrabold leading-none text-black shadow-[0_18px_50px_rgba(255,212,0,0.16)]">
               от 200.000 ₸
             </div>
           </article>
 
-          <article className="glass group relative flex h-full min-h-[640px] flex-col overflow-hidden rounded-[2rem] p-6 transition duration-300 hover:-translate-y-1 hover:border-primary-500/70 hover:shadow-[0_28px_90px_rgba(255,212,0,0.18)] sm:p-8">
+          <article className="glass group relative flex h-full flex-col overflow-hidden rounded-[2rem] p-5 transition duration-300 hover:-translate-y-1 hover:border-primary-500/70 hover:shadow-[0_28px_90px_rgba(255,212,0,0.18)] sm:p-6">
             <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-primary-500/80 to-transparent" />
             <div className="inline-flex w-fit rounded-full bg-primary-500 px-8 py-2 text-xl font-extrabold uppercase tracking-wide text-black">
               ТАРИФ 2
             </div>
-            <p className="mt-5 max-w-lg text-sm font-semibold italic leading-relaxed text-primary-100">
+            <p className="mt-3 max-w-lg text-sm font-semibold italic leading-snug text-primary-100">
               SMM + таргет + контроль маркетолога. Укрепление бренда и системный поток клиентов.
             </p>
 
-            <div className="mt-8 grid flex-1 gap-7">
+            <div className="mt-5 grid flex-1 gap-5">
               <div>
                 <h3 className="text-xl font-extrabold uppercase tracking-wide text-white">ТАРГЕТ</h3>
                 <TariffList items={tariffTwoTargetItems} />
@@ -109,30 +123,30 @@ export function Services() {
               </div>
             </div>
 
-            <div className="mt-8 inline-flex w-fit rounded-2xl bg-gradient-to-r from-primary-500 to-primary-50 px-8 py-3 text-xl font-extrabold leading-none text-black shadow-[0_18px_50px_rgba(255,212,0,0.16)]">
+            <div className="mt-5 inline-flex w-fit rounded-2xl bg-gradient-to-r from-primary-500 to-primary-50 px-8 py-3 text-xl font-extrabold leading-none text-black shadow-[0_18px_50px_rgba(255,212,0,0.16)]">
               от 400.000 ₸
             </div>
           </article>
 
-          <article className="glass group relative flex h-full min-h-[640px] flex-col overflow-hidden rounded-[2rem] p-6 transition duration-300 hover:-translate-y-1 hover:border-primary-500/70 hover:shadow-[0_28px_90px_rgba(255,212,0,0.18)] sm:p-8">
+          <article className="glass group relative flex h-full flex-col overflow-hidden rounded-[2rem] p-5 transition duration-300 hover:-translate-y-1 hover:border-primary-500/70 hover:shadow-[0_28px_90px_rgba(255,212,0,0.18)] sm:p-6">
             <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-primary-500/80 to-transparent" />
             <div className="inline-flex w-fit rounded-full bg-primary-500 px-8 py-2 text-xl font-extrabold uppercase tracking-wide text-black">
               ТАРИФ 3
             </div>
-            <p className="mt-5 max-w-lg text-sm font-semibold italic leading-relaxed text-primary-100">
+            <p className="mt-3 max-w-lg text-sm font-semibold italic leading-snug text-primary-100">
               Полная маркетинговая система для масштабирования.
             </p>
 
-            <div className="mt-8 grid flex-1 gap-4">
+            <div className="mt-5 grid flex-1 gap-3">
               {tariffThreeColumns.map((column) => (
-                <div key={column.title} className="rounded-2xl border border-primary-500/15 bg-black/35 p-4">
-                  <h3 className="text-lg font-extrabold text-white">{column.title}</h3>
+                <div key={column.title} className="rounded-2xl border border-primary-500/15 bg-black/35 p-3">
+                  <h3 className="text-base font-extrabold text-white">{column.title}</h3>
                   <TariffList items={column.items} />
                 </div>
               ))}
             </div>
 
-            <div className="mt-8 inline-flex w-fit rounded-2xl bg-gradient-to-r from-primary-500 to-primary-50 px-8 py-3 text-xl font-extrabold leading-none text-black shadow-[0_18px_50px_rgba(255,212,0,0.16)]">
+            <div className="mt-5 inline-flex w-fit rounded-2xl bg-gradient-to-r from-primary-500 to-primary-50 px-8 py-3 text-xl font-extrabold leading-none text-black shadow-[0_18px_50px_rgba(255,212,0,0.16)]">
               от 600.000 ₸
             </div>
           </article>
