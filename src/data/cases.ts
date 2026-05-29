@@ -103,8 +103,7 @@ export const cases: CaseStudy[] = [
     id: 'doner-dm',
     title: 'DONER DM',
     description: 'Кафе быстрого питания, г. Караганда. Фирменный стиль и сервис 24/7.',
-    image:
-      'https://images.unsplash.com/photo-1561758033-d89a9ad46332?auto=format&fit=crop&w=1200&q=80',
+    image: caseImage(kitchenHero, kitchenHeroJpg, kitchenHeroBlur),
     images: [
       caseImage(kitchen1, kitchen1Png, kitchen1Blur),
       caseImage(kitchen2, kitchen2Png, kitchen2Blur),
@@ -115,8 +114,7 @@ export const cases: CaseStudy[] = [
     id: 'parking-detailing',
     title: 'Parking Detailing',
     description: 'Профессиональный детейлинг, г. Караганда — бренд и digital-присутствие.',
-    image:
-      'https://images.unsplash.com/photo-1607860108854-5fab24bac10c?auto=format&fit=crop&w=1200&q=80',
+    image: '/cases/geely-monjaro.jpg',
     category: 'Auto',
   },
   {
