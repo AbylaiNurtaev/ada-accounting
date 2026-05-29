@@ -205,12 +205,12 @@ export const cases: CaseStudy[] = [
     category: 'HoReCa',
   },
   {
-    id: 'happy-club',
-    title: 'happy club',
-    description: 'Магазин детских товаров — e-commerce и контент.',
+    id: 'adellina-iskakova',
+    title: 'Adellina Iskakova',
+    description: 'Личный бренд — контент, позиционирование и соцсети.',
     image: caseImage(danceKids, danceKidsJpg, danceKidsBlur),
     images: [caseImage(danceKids, danceKidsJpg, danceKidsBlur)],
-    category: 'Kids Retail',
+    category: 'Personal Brand',
   },
   {
     id: 'twinmos',
