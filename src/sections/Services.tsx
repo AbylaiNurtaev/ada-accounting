@@ -2,14 +2,14 @@ import { OPEN_CONSULTATION_POPUP_EVENT } from '../components/ConsultationPopup'
 import { AnimatedSection } from '../components/AnimatedSection'
 import { SectionHeading } from '../components/SectionHeading'
 
-function ConsultationButton({ className }: { className?: string }) {
+function ConsultationButton({ className, label = 'Бесплатная консультация' }: { className?: string; label?: string }) {
   return (
     <button
       type="button"
       onClick={() => window.dispatchEvent(new Event(OPEN_CONSULTATION_POPUP_EVENT))}
       className={className}
     >
-      Бесплатная консультация
+      {label}
     </button>
   )
 }
@@ -97,7 +97,7 @@ export function Services() {
               <TariffList items={tariffOneItems} />
             </div>
 
-            <ConsultationButton className="mt-8 rounded-full border border-primary-500 bg-primary-500 px-7 py-3 text-sm font-semibold text-black shadow-[0_8px_30px_rgba(255,212,0,0.25)] transition hover:-translate-y-0.5 hover:bg-primary-100 hover:shadow-[0_12px_40px_rgba(255,212,0,0.40)]" />
+            <ConsultationButton label="от 200.000 ₸" className="mt-8 rounded-full border border-primary-500 bg-primary-500 px-7 py-3 text-sm font-semibold text-black shadow-[0_8px_30px_rgba(255,212,0,0.25)] transition hover:-translate-y-0.5 hover:bg-primary-100 hover:shadow-[0_12px_40px_rgba(255,212,0,0.40)]" />
           </article>
 
           <article className="glass group relative flex h-full min-h-[640px] flex-col overflow-hidden rounded-[2rem] p-6 transition duration-300 hover:-translate-y-1 hover:border-primary-500/70 hover:shadow-[0_28px_90px_rgba(255,212,0,0.18)] sm:p-8">
@@ -120,7 +120,7 @@ export function Services() {
               </div>
             </div>
 
-            <ConsultationButton className="mt-8 rounded-full border border-primary-500 bg-primary-500 px-7 py-3 text-sm font-semibold text-black shadow-[0_8px_30px_rgba(255,212,0,0.25)] transition hover:-translate-y-0.5 hover:bg-primary-100 hover:shadow-[0_12px_40px_rgba(255,212,0,0.40)]" />
+            <ConsultationButton label="от 400.000 ₸" className="mt-8 rounded-full border border-primary-500 bg-primary-500 px-7 py-3 text-sm font-semibold text-black shadow-[0_8px_30px_rgba(255,212,0,0.25)] transition hover:-translate-y-0.5 hover:bg-primary-100 hover:shadow-[0_12px_40px_rgba(255,212,0,0.40)]" />
           </article>
 
           <article className="glass group relative flex h-full min-h-[640px] flex-col overflow-hidden rounded-[2rem] p-6 transition duration-300 hover:-translate-y-1 hover:border-primary-500/70 hover:shadow-[0_28px_90px_rgba(255,212,0,0.18)] sm:p-8">
@@ -141,7 +141,7 @@ export function Services() {
               ))}
             </div>
 
-            <ConsultationButton className="mt-8 rounded-full border border-primary-500 bg-primary-500 px-7 py-3 text-sm font-semibold text-black shadow-[0_8px_30px_rgba(255,212,0,0.25)] transition hover:-translate-y-0.5 hover:bg-primary-100 hover:shadow-[0_12px_40px_rgba(255,212,0,0.40)]" />
+            <ConsultationButton label="от 600.000 ₸" className="mt-8 rounded-full border border-primary-500 bg-primary-500 px-7 py-3 text-sm font-semibold text-black shadow-[0_8px_30px_rgba(255,212,0,0.25)] transition hover:-translate-y-0.5 hover:bg-primary-100 hover:shadow-[0_12px_40px_rgba(255,212,0,0.40)]" />
           </article>
         </div>
 
